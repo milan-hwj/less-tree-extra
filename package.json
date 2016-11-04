@@ -1,0 +1,36 @@
+{
+  "name": "less-tree-extra",
+  "version": "0.0.1",
+  "description": "Get less import file tree, support absolute import parse, such as @import \"~/test/source/a.less\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/_mocha --require should --reporter spec",
+    "test-cov": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
+    "test-travis": "NODE_ENV=test node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
+  },
+  "author": "milan-hwj",
+  "license": "MIT",
+  "devDependencies": {
+    "istanbul": "~0.4.0",
+    "mocha": "~2.3.3",
+    "should": "~7.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milan-hwj/less-tree-extra"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/milan-hwj/less-tree-extra/issues"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "fs-extra": "^0.26.3",
+    "lodash": "^3.10.1",
+    "parse-less-import": "0.0.1",
+    "treeify": "^1.0.1",
+    "vinyl": "^1.1.0"
+  }
+}
