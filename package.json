@@ -1,6 +1,6 @@
 {
   "name": "less-tree-extra",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Get less import file tree, support absolute import parse, such as @import \"~/test/source/a.less\"",
   "main": "index.js",
   "scripts": {

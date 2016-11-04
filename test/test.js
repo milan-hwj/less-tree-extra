@@ -6,6 +6,7 @@ const tree = require('../index');
 // const CWD = process.cwd();
 
 console.info(tree('./test/source/a.less').toFlatObject('./test/'));
+console.info(tree('./test/source/a.less').toTreeObject());
 
 // describe('less-tree', () => {
 //   before(() => process.chdir(path.join(__dirname, 'source')));
