@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>免费试用</title>
+</head>
+
+<body>
+    <!-- 内容容器 -->
+    <section class="page-container J_page hidden">
+        <!-- 申请结果提示 -->
+        <div class="result J_result hidden"></div>
+        <!-- 商品信息 -->
+        <section class="product-container hidden">
+            <dl class="product-box J_product"></dl>
+            <div class="btn-box">
+                <a href="/gaea_pt/mpt/group/0ysy/index.html" class="apply-btn">返回首页</a>
+                <a href="/mpt/group/0ysy/mine.html" class="J_share share-btn">我的试用</a>
+            </div>
+        </section>
+    </section>
+    <section id="J_nav_menu" class="nav_menu"></section>
+    <section id="J_container-mores"></section>
+
+    <%- include('../../../../../../demo/mpt/group/unit/bindDialog.html') %>
+
+    <!-- loading  -->
+    <%- include('../../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+
+    <!-- 头部信息模板 -->
+    <script id="T_result" type="text/template">
+        <div class="tip">
+            <p>您已拼团成功并提交试用申请，</p>
+            <p>开奖结果将于${lotteryDate}公布！</p>
+        </div>
+        <div class="pattern"></div>
+    </script> 
+
+    <!-- 商品信息模板 -->
+    <script id="T_product" type="text/template">
+        <dt>
+            <a href="${targetUrl}"><img id="J_shareimg" src="${img}" /></a>
+        </dt>
+        <dd>
+            <a href="${targetUrl}">
+                <p class="title">${title}</p>
+                <span class="origin-price">价值&nbsp;<del>&yen;${price}</del></span>
+            </a>
+        </dd>
+    </script>
+
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>

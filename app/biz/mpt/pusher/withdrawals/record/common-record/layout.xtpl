@@ -1,0 +1,27 @@
+<section class="header">
+    <div class="title">
+        <span>{{title}}</span>
+        <img class="help-tip"
+            src="//h0.hucdn.com/open/201633/b54b2563711f1d2f_40x40.png">
+    </div>
+    <div class="num" id="J_num"></div>
+</section>
+<div class="amount-tab-container">
+    <section class="tab-wrapper z-for-0">
+    	<div class="tab"><span>{{status[0].title}}</span></div>
+    	<div class="tab"><span>{{status[1].title}}</span></div>
+    </section>
+    <div class="js-nav-menu-empty"></div>
+    <section class="amount-list-outer">
+    	{{! 订单金额列表 }}
+    	<div class="amount-list-inner">
+    		<div class="amount-tip"></div>
+    		<div class="amount-box"></div>
+    	</div>
+    	{{! 新增好友金额列表 }}
+    	<div class="amount-list-inner">
+    		<div class="amount-tip amount-tip"></div>
+    		<div class="amount-box"></div>
+    	</div>
+    </section>
+</div>

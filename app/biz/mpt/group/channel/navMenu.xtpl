@@ -1,0 +1,9 @@
+<div class="nav-menu-wrapper">
+    <div class="nav-menu-inner">
+        <div class="nav-menu-item active" data-tab={{tab}} data-cat="all">上新</div>
+        {{#each (list)}}
+		<div class="nav-menu-item" data-tab={{tab}} data-cat={{this.key}}>{{this.name}}</div>
+		{{/each}}
+        <span class="nav-menu-scroll"></span>
+    </div>
+</div>

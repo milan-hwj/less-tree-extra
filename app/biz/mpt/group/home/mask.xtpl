@@ -1,0 +1,41 @@
+<div id="J_download-mask" class="mask hidden">
+    <div class="download-prop">
+        <h2>已有贝贝APP点此可直接打开哦！</h2>
+        <p class="download" id="J_btn-download">
+            下载贝贝APP</p>
+        <p id="J_btn-cancel">下次再说</p>
+    </div>
+</div>
+
+<div id="J_share-mask" class="mask hidden">
+    <div class="share-prop animated flash">
+        <p class="tip">发给小伙伴参团</p>
+    </div>
+    <div class="share-content">
+        <img src="//b0.hucdn.com/party/2016/7/upload_ce19860c6cac5035144cac01c6d0b64a_200x160.png" alt="">
+        {{#if (res.isLeader)}}
+            {{#if (res.biz_type===3)}}
+                <p class="title small">发现一个未成团订单</p>
+            {{else}}
+                <p class="title">您已开团</p>
+            {{/if}}
+        {{else}}
+            <p class="title">您已参团</p>
+        {{/if}}
+        {{#if (res.isLdx)}}
+            <p class="sub-title">新用户专享还差<label id="J_need-Number">{{res.need_num}}</label>人</p>
+            <p class="sub-title">必须邀请<span class="emphasize">新用户</span>参团才可拼团成功哦！</p>
+        {{else}}
+            {{#if (res.biz_type===3)}}
+                <p class="sub-title small">还差<label id="J_need-Number">{{res.need_num}}</label>人 拼团成功</p>
+				<p class="sub-title small">邀请有需要的小伙伴一起来参团吧！</p>
+            {{else}}
+                <p class="sub-title">就差<label id="J_need-Number">{{res.need_num}}</label>人就能拼团成功</p>
+                <p class="sub-title">快邀请小伙伴一起来参团吧！</p>
+            {{/if}}
+        {{/if}}
+        {{#if(res.member_coupon_message)}}
+            <p class="coupon-title">{{res.member_coupon_message}}</p>
+        {{/if}}
+    </div>
+</div>

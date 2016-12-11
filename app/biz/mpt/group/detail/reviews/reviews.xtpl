@@ -1,0 +1,38 @@
+{{#if (data.tags.length)}}
+<div class="reviews">
+    <h3>买家口碑<span>({{data.count}})</span></h3>
+    <ul class="tag-list">
+        {{#each (data.tags)}}
+        <li class="tag-item">
+            {{this.name}}<span>({{this.count}})</span>
+        </li>
+        {{/each}}
+    </ul>
+    <ul class="review-list">
+        {{#each (data.items) }}
+        <li class="review-item">
+            <p>
+                <img src="//b3.hucdn.com/upload/face/1607/18/18407810631476_1600x1600.jpg!160x160.jpg"
+                     data-src="{{this.avatar}}" class="head-img lazyimg b-lazy"/>
+                <span class="nick">{{this.display_name}}</span>
+                <span class="join-time">{{this.join_time_desc}}</span>
+							<span class="score">
+								{{{this.scoreHTML}}}
+							</span>
+            </p>
+
+            <p class="content">{{this.comment}}</p>
+
+            <p class="sku-info">
+                <span>{{this.sku_properties}} {{this.baby_age}}</span>
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+    <p class="show-all" id="J_showAll">
+        <a href="/evaluate_list.html?iid={{iid}}">
+            查看全部评价
+        </a>
+    </p>
+</div>
+{{/if}}

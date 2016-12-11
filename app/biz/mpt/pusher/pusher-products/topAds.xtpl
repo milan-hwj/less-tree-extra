@@ -1,0 +1,18 @@
+<div id="J_slider-outer" 
+    class="slider-outer J_log"
+    data-json__block_name="贝贝赚宝_开始助力_规则页面"
+    data-json__biz="zhuanbao"
+    data-entity_type="link"
+    data-entity_list=""
+>
+    <ul id="J_slider-wrap" class="slider-wrap">
+        {{#each(ads)}}
+        <li>
+            <a href="{{this.linkUrl}}" data-style="display:block;">
+                <img dataimg="{{this.img}}" alt="{{this.name}}" class="lazyimg" src="//b0.hucdn.com/img/h5/spaceball.gif" style="opacity:1;" />
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<div id='J_slider-status' class="slider-status"></div>

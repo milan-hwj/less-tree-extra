@@ -1,0 +1,61 @@
+{{#each (data.resp)}}
+	{{#if (this.group_status === 4)}}
+	<li class="group-item status-outstock J_group-item J_log" data-role={{this.group_status}} data-iid={{this.iid}} data-eid={{this.event_id}} data-gid={{this.group_code}} data-block="index_item">
+	{{else}}
+		{{#if (this.isGroupOpen)}}
+		<li class="group-item status-opend J_group-item J_log" data-role='11' data-iid={{this.iid}} data-eid={{this.event_id}} data-block="index_item">
+		{{else}}
+		<li class="group-item status-unopen J_group-item J_log" data-role='12' data-iid={{this.iid}} data-eid={{thisevent_id}} data-block="index_item">
+		{{/if}}
+	{{/if}}
+		<a href="{{this.link}}" >
+			<div class="list-img">
+		    	{{#if (this.tags_v2 && this.tags_v2.length)}}
+		    		<img class="item-icon b-lazy" src="//b0.hucdn.com/img/h5/spaceball.gif" data-src="{{this.tags_v2[0]}}">
+		    	{{/if}}
+				<img data-src="{{this.rect_img}}" src="{{this.src}}" class="item-img b-lazy b-lazy-ani">
+				<div class="buying-info">
+					<p class="users">{{this.buying_info}}</p>
+					<div class="angle-container"><div class="angle1"></div><div class="angle2"></div></div>
+				</div>
+				<div class="group-status"></div>
+			</div>
+			<div class="detail-container">
+				{{#if (this.pageName  === 'brand' && this.brand_logo)}}
+				<img class="brand_logo" src={{this.brand_logo}} />
+				<div class="group-title brand-title">
+				{{else}}
+				<div class="group-title">
+				{{/if}}
+					{{#if (this.country_circle_icon)}}
+						<img class="country-icon b-lazy" src="//b0.hucdn.com/img/h5/spaceball.gif" data-src="{{this.country_circle_icon}}"/>
+					{{/if}}
+					{{#if (this.goods_source)}}
+						<span class="goods-source">{{this.goods_source}}</span>
+					{{/if}}
+						  <span class="title">{{#if(this.um_mult_promotion_txt)}}<span class="promotion-title">【{{this.um_mult_promotion_txt}}】</span>{{/if}}
+              {{this.title}}</span>
+				</div>
+			</div>
+			{{#if (this.price_promotion_info && this.price_promotion_info.tag && this.price_promotion_info.promotion_desc)}}
+			<div class="price_promotion_info">
+				<span>{{this.price_promotion_info.tag}}</span>
+				<span>{{this.price_promotion_info.promotion_desc}}</span>
+			</div>
+			{{/if}}
+			{{! 5.27 改版banner }}
+			<div class="group-banner">
+				<div class="group-price">
+					<img class="group-people" src="//h0.hucdn.com/open/201632/bf922d8f56be32d2_32x32.png">
+					<span class="group-num">{{this.groupNumStr}}</span>
+					<span class="rmb">¥</span><span class="price-int">{{this.priceInt}}</span><span class="price-dec">{{this.priceDecimal}}</span><span class="price-ori">{{this.oripriceInt}}</span>
+				</div>
+				<div class="group-btns">
+					<div class="group-btn">
+						<span>{{this.btnText}}</span><i class="iconfont" >&#xe67a;</i>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+{{/each}}

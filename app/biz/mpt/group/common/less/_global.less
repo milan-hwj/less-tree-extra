@@ -1,0 +1,43 @@
+@import "./_variables";
+
+.flex-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    &.align-center {
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    &.align-bottom {
+        -webkit-box-align: end;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
+
+// lazyload
+.b-lazy-ani {
+    -webkit-transition: opacity 300ms ease-in-out;
+    -moz-transition: opacity 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
+}
+.b-lazy-ani.b-loaded {
+    opacity: 1;
+}
+
+.fall-img-container{
+    width: 375/@g-base;
+    height: 375/@g-base;
+    background:url('//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png');
+    background-size:100% 100%;
+}

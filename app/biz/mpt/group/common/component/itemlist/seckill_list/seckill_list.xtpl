@@ -1,0 +1,54 @@
+
+
+{{#each(data)}}
+    <ul class="item-list-1 {{classname}} J_item-list">
+        {{#if (type === "end")}}
+             <div class="seckill-time">
+                <span class="division"></span>
+                {{title}}
+                <span class="division"></span>
+             </div>
+        {{else}}
+             <div class="seckill-time">
+                {{title}}
+             </div>
+        {{/if}}
+        {{#each (items)}}
+        <li class="J_log clearfix item-sec" data-block="this_list_1" data-iid="{{iid}}">
+        <div class="timeline"></div>
+        {{#if (type === "end")}}
+            <a href='javacript:;' class="m-content J_end">
+        {{else}}
+            <a href='{{_url}}' class="m-content {{soldut_class}}">
+        {{/if}}
+        
+            <div class="m-image">
+                <img data-src="{{img}}" use-lazyload src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png">
+                <div class="soldout {{_soldout_class}}">已抢光</div>
+            </div>
+                <div class="m-info-wrap">
+                    <div class="m-info">
+                        <p>{{title}}</p>
+                        <div class="price">
+                            <span class="price-sign">¥</span><span class="price-number-int">{{_priceInt}}</span><span class="price-number-dec">{{_priceDec}}</span><span class="ori-price">¥{{_priceIntOri}}</span>
+                        </div>
+
+                        <div class="m-detail">
+                            <div class="m-entry">
+                                {{#if (_now_type === "selling")}}
+                                <i class="process J_processs" data-precent={{_sold_precent}}></i>
+                                {{/if}}
+                                <span class="m-left">{{_lefttext}}
+                                    
+                                </span>
+                                <span class="go-to">{{(btntext || ../btntext)}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+{{/each}}
+

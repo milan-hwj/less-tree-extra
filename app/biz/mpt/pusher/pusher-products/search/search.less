@@ -1,0 +1,84 @@
+/**
+ * @desc    贝贝推手-首页-搜索
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/09/09
+ */
+@import '../../../../../../unit/common/less/common.less';
+@import '../../common/less/variables.less';
+@banner-height: 210/@g-base;
+@nav-height: 80/@g-base;
+.pusher-index-animation-tosearch{
+    .products{
+        .px2rem(margin-top, 90);
+    }
+    .search-container{
+        .px2rem(height, 90);
+        border-bottom: 1px solid @gray-background;
+        position: fixed;
+        animation:search-container-move 0.5s;
+        -webkit-animation:search-container-move 0.5s; /*Safari and Chrome*/
+        animation-fill-mode: forwards;
+    }
+    @keyframes search-container-move{
+        0% {top: @banner-height;}
+        100% {top: 0;}
+    }
+    
+    @-webkit-keyframes search-container-move{
+        from {top: @banner-height;}
+        to {top:0;}
+    }
+    .slider{
+        overflow: hidden;
+        animation: slider-remove 0.5s;
+        animation-fill-mode: forwards;
+    }
+    .products-header{
+        overflow: hidden;
+        animation: header-remove 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes slider-remove{
+        0% {opacity: 0.3; height: @banner-height;}
+        50% {opacity: 0.3;}
+        100% {opacity: 0; height: 0;}
+    }
+    @keyframes header-remove{
+        0% {opacity: 0.3; height: @nav-height;}
+        50% {opacity: 0.3;}
+        100% {opacity: 0; height: 0;}
+    }
+}
+.pusher-index-animation-toindex{
+    .search-container{
+        .px2rem(height, 77);
+    }
+    .products{
+        .px2rem(margin-top, 0);
+    }
+    .search-container{
+        position: relative;
+    }
+    .slider{
+        animation: banner-show 0.5s;
+        -webkit-animation: banner-show 0.5s; /*Safari and Chrome*/
+        animation-fill-mode: forwards;
+    }
+    .products-header{
+        animation: nav-show 0.5s;
+        -webkit-animation: nav-show 0.5s; /*Safari and Chrome*/
+        animation-fill-mode: forwards;
+    }
+    @keyframes nav-show{
+        0% {opacity: 0; height: 0;}
+        100% {opacity: 1; height: @nav-height;}
+    }
+    @keyframes banner-show{
+        0% {opacity: 0; height: 0;}
+        50% {opacity: 0; height: @banner-height;}
+        100% {opacity: 1; height: @banner-height;}
+    }
+}
+.custom-empty-page{
+    .px2rem(padding-top, 301);
+}

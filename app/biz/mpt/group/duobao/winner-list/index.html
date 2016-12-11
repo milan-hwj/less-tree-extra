@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>中奖名单</title>
+</head>
+
+<body>
+	<input type="hidden" id="app_share_conf">
+    <section id="J_container-details" class="m-detail-cont"></section>
+	<section class="user-join" id="J_user-join"></section>
+	<section class="container" id="J_container"></section>
+	<section id="J_nav_menu"></section>
+	
+    <section id="J_container-mores"></section>
+	
+	<!-- @T template -->
+	<script type="text/template" id="T_user-join">
+		<div class="inner">
+			<img use-lazyload data-src="${avatar}"  src="//b3.hucdn.com/upload/face/1607/18/18407810631476_1600x1600.jpg!160x160.jpg" />
+			<p>${nick}{@if is_leader}<i class="leader"></i>{@/if}</p>
+			<p>{@if is_leader}组建： {@else}加入：{@/if}${group_nick}{@if group_rank < 4}<i class="top top${group_rank}"></i>{@/if}</p>
+			<div class="icon-state state${user_biz_status}"></div>
+		</div>
+	</script>
+
+	<script type="text/template" id="T_container">
+		<div class="m-tab-wrapper z-for-0" id="J_m-tab-wrapper">
+			{@each list.top_groups as item, index}
+			<div class="m-tab J_tab J_log" data-position=${index} data-block="top-team">
+				<i class="top top${item.group_rank}"></i>
+				<span>${item.group_nick}</span>
+			</div>
+			{@/each}
+			<i class="arrow-down"></i>
+		</div>
+		<div class="winner-list-cont" id="J_winner-list-cont" data-active="0">
+			{@each list.top_groups as item}
+			<div class="group-list">
+			    <div class="winner-list-title">
+					<span>${item.group_nick} / ${item.group_score}人</span>
+					<span>获得${item.group_stock}份奖品</span>
+			    </div>
+			    <ul class="dropdown-box J_dropdown-box"></ul>
+			</div>
+			{@/each}
+		</div>
+	</script>
+
+	<script type="text/template" id="T_dropdown-box">
+		{@each list as item, index}
+        <li>
+			<img use-lazyload data-src="${item.avatar}"  src="//b3.hucdn.com/upload/face/1607/18/18407810631476_1600x1600.jpg!160x160.jpg" />
+			<span>${item.nick}</span>
+			<span>${item.group_time}</span>
+			{@if item.is_leader}<i class="leader">团长</i>{@/if}
+        </li>
+	    {@/each}
+	</script>
+
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>

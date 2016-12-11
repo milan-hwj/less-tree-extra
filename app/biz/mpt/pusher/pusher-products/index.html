@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我要开团</title>
+    <%- include('/unit/layout/header.html')%>
+</head>
+
+<body>
+<!-- loading -->
+         <%- include ../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html %>
+
+    <!-- 广告 -->
+    <section id="J_slider" class="slider hidden"></section>
+    <section id="J_search" class="search-container"></section>
+    <!-- 分类、过滤 -->
+    <section id="productsHeader" class="products-header">
+        <!-- 排序菜单 -->
+        <div class="products-bar">
+            <div class="gradient-mask"></div>
+            <div
+                class="sort J_log"
+                data-json__block_name="贝贝赚宝_开始助力_分类tab排序按钮"
+                data-json__biz="zhuanbao">
+            </div>
+        </div>
+        <section id="menuContainer"></section>
+    </section>
+    <!-- 商品列表 -->
+    <section id="pushProducts" class="products"></section>
+    <p class="item-loading"></p>
+    <!-- footer -->
+    <%- include('/unit/common/widget/pintuan/pusherFooter/pusherFooter.html', {active:'makeMoney'})%>
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,6 @@
+<div class="toast-layer {{data.className}}">
+    <a href='/mpt/group/home.html?group_code={{data.group_code}}&beibeiapp_info={"target":"bb/pintuan_detail","group_code":"{{data.group_code}}"}'>
+        <img class="avatar" src="{{data.avatar}}" />
+        <span class="ellipsis">{{data.message_1}}</span><span>{{data.message_2}}</span>
+    </a>
+</div>

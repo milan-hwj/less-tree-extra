@@ -1,0 +1,9 @@
+<div class="help-dialog">
+    <div class="content">
+        <p class="title">{{title}}</p>
+        <ul>
+            <li>{{content}}</li>
+        </ul>
+    </div>
+    <div class="btn">知道了</div>
+</div>

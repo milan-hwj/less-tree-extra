@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../../../../../unit/layout/header.html') %>
+    <title>排行榜</title>
+</head>
+<body>
+        <!-- 缓存一张图片，避免切换TAB时闪烁 -->
+        <img class="cache">
+        <div class="content">
+            <section class="tab-wrapper">
+            	<div class="tab"><span>实时热销</span></div>
+            	<div class="tab"><span>新品榜单</span></div>
+            </section>
+            <section class="list-container">
+                <!-- 畅销列表  -->
+                <div class="list">
+                    <ul class="hot-list item-list small">
+                    </ul>
+                </div>
+                <!-- 新品列表  -->
+                <div class="list">
+                    <ul class="new-list item-list small">
+                    </ul>
+                </div>
+            </section>
+        </div>
+    <!-- loading  -->
+    <%- include('../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+    
+    <%- include('../../../common/gaea/preload.html',{
+        id: 'getGroupListFromGaea',
+        url: 'http://sapi.beibei.com/item/fightgroup/1-20-hot_group-.html'
+    })%>
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+</html>

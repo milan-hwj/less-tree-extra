@@ -1,0 +1,120 @@
+{{#each (data)}}
+    <li>
+        <a href="/mpt/group/home.html?group_code={{this.group_code}}" class="info">
+            <div class="img">
+                {{#if (index === 0)}}
+                    <img src="{{this.img}}"/>
+                {{else}}
+                    <img use-lazyload data-src="{{this.img}}" src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png"
+                        class="lazyimg" alt="{{xindex}}"/>
+                {{/if}}
+            </div>
+            <div class="desc">
+                {{#if (this.labels)}}
+                    {{#each (this.labels)}}<em>{{this}}</em>{{/each}}
+                {{/if}}
+                {{this.title}}
+            </div>
+            <div class="detail">
+                <span class="price">
+                    &yen; <em>{{this.price_format.integer}}</em>{{this.price_format.decimal}}
+                </span>
+                <span class="num">
+                    {{this.group_num}}人团
+                </span>
+                {{! 试用申请商品， 没有拼团成功 失败 等文字 }}
+                {{#if (this.biz_type !== 2 || this.group_status !== 1)}}
+                    {{#if (this.group_status === 1)}}
+                        <b class="status">拼团成功</b>
+                    {{elseif (this.group_status === 2)}}
+                        <b class="status status-wait">等待成团</b>
+                    {{elseif (this.group_status === 3)}}
+                        <b class="status status-fail">拼团失败</b>
+                    {{/if}}
+                {{/if}}
+            </div>
+            {{#if (this.biz_type === 1)}}
+                {{#if (this.biz_status === 1)}}
+                    <div class="icon-state f-prize"></div>
+                {{elseif (this.biz_status === 2)}}
+                    <div class="icon-state s-prize"></div>
+                {{/if}}
+            {{elseif (this.biz_type === 6)}}
+                {{#if (this.biz_status === 1)}}
+                    <div class="icon-state award-success"></div>
+                {{elseif (this.biz_status === 2)}}
+                    <div class="icon-state award-fail"></div>
+                {{/if}}
+            {{! 只有拼团成功的试用商品才会处于申请状态 }}
+            {{elseif (this.biz_type === 2 && this.group_status === 1)}}
+                {{#if (this.biz_status === 0)}}
+                    <div class="icon-state apply-ing"></div>
+                {{elseif (this.biz_status === 1)}}
+                    <div class="icon-state apply-success"></div>
+                {{elseif (this.biz_status === 2)}}
+                    <div class="icon-state apply-fail"></div>
+                {{/if}}
+            {{/if}}
+        </a>
+        <div class="operate">
+            <div class="left">
+                {{#if (this.member_num_left && this.group_status === 2)}}
+                    还差<em>{{this.member_num_left}}</em>人成团
+                {{/if}}
+            </div>
+            <div class="btn-area">
+                {{! 旧抽奖业务 }}
+                {{#if (this.biz_type === 1)}}
+                    {{#if (this.biz_status === 0)}}
+                        <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                        <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                    {{elseif (this.biz_status === 1)}}
+                        <a class="btn" href="/mpt/group/winner-list.html?iid={{this.iid}}">中奖详情</a>
+                        <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                    {{elseif (this.biz_status === 2)}}
+                        <a class="btn" href="/mpt/group/winner-list.html?iid={{this.iid}}">中奖详情</a>
+                        <a class="btn" href="/coupon/coupon.html">我的现金券</a>
+                    {{/if}}
+                {{! 新抽奖业务 }}
+                {{elseif (this.biz_type === 6)}}
+                    {{#if (this.biz_status === 0)}}
+                        <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                        <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                    {{elseif (this.biz_status === 1)}}
+                        <a class="btn" href="/mpt/group/winner-list.html?iid={{this.iid}}">中奖详情</a>
+                        <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                    {{elseif (this.biz_status === 2)}}
+                        <a class="btn" href="/mpt/group/winner-list.html?iid={{this.iid}}">中奖详情</a>
+                        <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                    {{/if}}
+                {{elseif (this.biz_type === 2)}}
+                    {{#if (this.group_status === 1)}}
+                        {{#if (this.biz_status === 0)}}
+                            <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                        {{elseif (this.biz_status === 1)}}
+                            <a class="btn" href="/mpt/group/0ysy/list.html?iid={{this.iid}}">中奖详情</a>
+                            <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                        {{elseif (this.biz_status === 2)}}
+                            <a class="btn" href="/mpt/group/0ysy/list.html?iid={{this.iid}}">中奖详情</a>
+                            <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                        {{/if}}
+                    {{elseif (this.group_status === 2)}}
+                        <a class="btn btn-pink" href="/mpt/group/home.html?group_code={{this.group_code}}&needshare=1">喊人参团</a>
+                    {{elseif (this.group_status === 3)}}  
+                        <a class="btn" href="/mpt/group/0ysy/list.html?iid={{this.iid}}">中奖详情</a>
+                        <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                    {{/if}}
+                {{elseif (this.group_status === 1)}}
+                    <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                    <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                {{elseif (this.group_status === 2)}}
+                    <a class="btn btn-pink" href="/mpt/group/home.html?group_code={{this.group_code}}&needshare=1">喊人参团</a>
+                    <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                {{elseif (this.group_status === 3)}}
+                    <a class="btn" href="/mpt/group/home.html?group_code={{this.group_code}}">拼团详情</a>
+                    <a class="btn" href="/orders/order-detail.html?oid={{this.oid}}">查看订单</a>
+                {{/if}}
+            </div>
+        </div>
+    </li>
+{{/each}}

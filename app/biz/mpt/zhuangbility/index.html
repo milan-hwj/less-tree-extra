@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../../../../unit/layout/header.html') %>
+        <title>双11贝贝疯狂购物订单生成器</title>
+    </head>
+    <body>
+        <section class="J_opZoom">
+            <h1>双11贝贝疯狂购物订单生成器</h1>
+
+            <section class="m-example">
+                <img class="m-example-img" src="http://h0.hucdn.com/open/201645/200db1da1e783912_750x750.png" alt="">
+            </section>
+
+            <section class="m-enter">
+                <label>
+                    <span>姓名</span>
+                    <input type="text" class="J_inputName" />
+                </label>
+            </section>
+
+            <section class="m-confirm">
+                <a href="javascript:;" class="J_btnConfirm">确定</a>
+            </section>
+
+            <section class="m-tip">
+                友情提醒：确定生成后可以长按图片保存(o^^o)
+            </section>
+        </section>
+
+        <section class="m-result-area" id="J_resultArea">
+            <span class="u-qrcode"></span>
+            <!-- 时间 -->
+            <span class="J_renderTime u-render-time"></span>
+            <!-- 名字1 -->
+            <span class="J_renderName u-render-name-1"></span>
+            <!-- 名字2 -->
+            <span class="J_renderName u-render-name-2"></span>
+            <!-- 待付款 -->
+            <span class="J_renderToPay u-render-to-pay"></span>
+            <!-- 待收货 -->
+            <span class="J_renderToGet u-render-to-get"></span>
+            <!-- 待评价 -->
+            <span class="J_renderAfter u-render-after"></span>
+            <!-- 现金券 -->
+            <span class="J_renderCoupon u-render-coupon"></span>
+            <!-- 余额 -->
+            <span class="J_renderBalance u-render-balance"></span>
+            <!-- 购物车数量 -->
+            <span class="J_renderCartNum u-render-cart-num"></span>
+        </section>
+
+        <section class="m-show-qrcode">
+            <a href="javascript:;" class="J_btnShowQrcode"></a>
+        </section>
+
+        <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+    </body>
+</html>

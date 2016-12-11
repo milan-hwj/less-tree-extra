@@ -1,0 +1,64 @@
+@import "../../../../../unit/common/less/common";
+@import "../common/less/variables";
+
+html {
+    height: 100%;
+    background-color: #ffffff;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    background-color: #ffffff;
+    .box-sizing();
+}
+
+.banner {
+    .px2rem(height, 500);
+    img {
+        width: 100%;
+    }
+}
+
+.form-container {
+    .px2rem(padding-top, 60);
+    h2 {
+        text-align: center;
+        .font-size(32);
+        .px2rem(margin-bottom, 40);
+    }
+    .form {
+        .clearfix();
+        .mpb(margin, 0, 24);
+        // .px2rem(margin-bottom, 100);
+    }
+    input {
+        float: left;
+        .box-sizing();
+        .font-size(30);
+        .px2rem(padding-left, 16);
+        .px2rem(height, 88);
+        width: 80%;
+        border: 1px solid @red;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    button {
+        float: left;
+        .box-sizing();
+        width: 20%;
+        .px2rem(height, 88);
+        background-color: @red;
+        text-align: center;
+        color: #ffffff;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    p{
+        width: 100%;
+        .px2rem(padding-left, 24);
+        .px2rem(padding-top, 24);
+        .font-size(24);
+        color: @gray;
+    }
+}

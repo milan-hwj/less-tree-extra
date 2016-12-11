@@ -1,0 +1,30 @@
+<div class="nav-menu-wrapper">
+    <div class="nav-menu-inner">
+        <div
+            class="nav-menu-item J_log active"
+            data-tab="全部"
+            data-cat="all"
+
+            data-json__block_name="贝贝赚宝_开始助力_分类tab"
+            data-json__tab="全部"
+            data-json__biz="zhuanbao"
+        >
+            全部
+        </div>
+        {{#each(data)}}
+		    <div
+                class="nav-menu-item J_log"
+                data-tab={{this.name}}
+                data-cat={{this.key}}
+
+                data-json__block_name="贝贝赚宝_开始助力_分类tab"
+                data-json__tab="{{this.name}}"
+                data-json__biz="zhuanbao"
+            >
+                {{this.name}}
+            </div>
+        {{/each}}
+        <span class="nav-menu-scroll"></span>
+    </div>
+</div>
+

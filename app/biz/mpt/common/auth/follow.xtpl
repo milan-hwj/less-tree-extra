@@ -1,0 +1,11 @@
+<div class="guide-container J_wxFollow-modal hidden">
+    <div class="guide-mask J_wxFollow-mask"></div>
+    <div class="guide-tofollow">
+        <img class="top-image J_top-img" src="//h0.hucdn.com/open/201627/b927caa40397fe00_570x160.png">
+        <div class="main-tips J_main-tips">
+            <p>为了更好的使用贝贝拼团</p><p>请先关注微信</p>
+        </div>
+        <div class="touch-tips">长按识别二维码并关注</div>
+        <img alt="二维码" class="img-qcode J_img-qcode" src="{{qrcode}}">
+    </div>
+</div>

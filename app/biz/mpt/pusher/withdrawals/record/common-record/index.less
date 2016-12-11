@@ -1,0 +1,213 @@
+/**
+ * @desc    贝贝推手-累计金额、预计金额通用样式
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/08/05
+ */
+@import '../../../../../../../unit/common/less/common.less';
+@import '../../../common/less/variables.less';
+
+html{
+    background-color: @gray-background !important;
+}
+body{
+    font-family: HeitiJ-Light, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: @font-base;
+    .fontSize(28);
+    
+    .main {
+        overflow: hidden;
+    }
+
+    .header{
+        background-color: #FFF;
+        padding: 32/@g-base 24/@g-base 0 24/@g-base;
+        border-bottom: 16/@g-base solid @gray-background;
+        color: @gray;
+        .px2rem(height, 256);
+        .title{
+            span{
+                .fontSize(24);
+            }
+            .help-tip{
+                .px2rem(width, 36);
+                .px2rem(height, 36);
+                float: right;
+                cursor: pointer;
+            }
+        }
+        .num{
+            .fontSize(80);
+            .px2rem(padding-top, 55);
+            color: @red;
+        }
+    }
+
+    .record{
+        .px2rem(margin-left, 24);
+        display: block;
+        background-color: #fff;
+        padding: 24/@g-base 24/@g-base 24/@g-base 0;
+        border-bottom: 1px solid @gray-line;
+        .row1{
+            .px2rem(padding-top, 8);
+            .money{
+                color: @red;
+            }
+            .status{
+                float: right;
+                color: @gray;
+            }
+            .new-member{
+                color: white;
+                background-color: @red;
+                padding: 3/@g-base 6/@g-base;
+                border-radius: 3/@g-base;
+                vertical-align: middle;
+                .fontSize(18);
+            }
+        }
+        .row2{
+            .px2rem(padding-top, 32);
+
+            img{
+                .px2rem(width, 100);
+                .px2rem(height, 100);
+                .px2rem(margin-right, 20);
+            }
+            .right-part{
+                display: inline-block;
+                vertical-align: top;
+                .px2rem(padding-top, 8);
+                .px2rem(width, 570);
+
+                p{
+                    .px2rem(padding-bottom, 15);
+                    color: #3D3D3D;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                    white-space: nowrap;
+                }
+                span{
+                    color: @gray;
+                    .fontSize(26);
+                }
+                    
+                .detail{
+                    display: inline-block;
+                    float: right;
+                    color: @gray;
+                    .fontSize(26);
+                    span{
+                        color: @font-base;
+                    }
+                    .iconfont{
+                        position: relative;
+                        .fontSize(18);
+                        .px2rem(top, -2)
+                    }
+                }
+            }
+        }
+    }
+
+    .amount-tab-container{
+        .tab-wrapper {
+            position: relative;
+            display: -webkit-box;
+            display: box;
+            display: flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: row;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            background-color: #fff;
+            .px2rem(height, 82);
+            .border-bottom(1px, solid, @gray-line);
+            .tab {
+                display: inline-block;
+                cursor: pointer;
+                text-align: center;
+                color: #3d3d3d;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                flex: 1;
+                .fontSize(28);
+                .px2rem(line-height, 82);
+                span {
+                    display: inline-block;
+                    padding: 0 36/@g-base;
+                }
+            }
+        }
+        .js-nav-menu-empty{
+            .px2rem(height, 82);
+            display: none;
+        }
+        &.sticky{
+            .js-nav-menu-empty{
+                display: block;
+            }
+            .tab-wrapper{
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                background: #fff;
+                z-index: 100;
+                width: 100%;
+                .border-bottom(1px, solid, @gray-line);
+            }
+        }
+    }
+
+    .z-for-0 .tab:nth-child(1) span,
+    .z-for-1 .tab:nth-child(2) span {
+        color: @red;
+        .border-bottom(3px, solid, @red);
+    }
+
+    .amount-list-outer {
+        overflow: hidden;
+        -webkit-transition: transform .3s;
+                transition: transform .3s;
+        .px2rem(width, 1500);
+        .amount-list-inner {
+            float: left;
+            overflow: hidden;
+            .px2rem(width, 750);
+            .amount-tip {
+                overflow: hidden;
+                color: #ccad14;
+                background-color: #fffae0;
+                .fontSize(24);
+                .px2rem(height, 60);
+                .px2rem(width, 750);
+                .px2rem(line-height, 60);
+                .px2rem(padding-left, 24);
+            }
+            .amount-box {
+                background-color: #fff;
+                .z-end {
+                    text-align: center;
+                    color: @gray;
+                    background-color: @gray-background;
+                    padding: 6/@g-base 0;
+                    .fontSize(24);
+                }
+            }
+        }
+        .empty-style {
+            .px2rem(margin-top, 160);
+        }
+    }
+
+    [data-active="0"] {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);  
+    }
+    [data-active="1"] {
+        -webkit-transform: translateX(-750/@g-base);
+                transform: translateX(-750/@g-base);  
+    }
+}

@@ -1,0 +1,14 @@
+{{#each(data)}}
+    <div class="record"> 
+        <div class="row1">
+            <span class="money">{{this.moneyShow}}元</span>
+            <span class="status">{{this.statusShow}}</span>
+        </div>
+        <div class="row2"><span>提现流水号: {{this.number}}</span></div>
+        <div class="row3"><span>{{this.optTimeShow}}</span></div>
+        
+        {{#if( this.status === 3 )}}
+            <div class="row4"><span>{{this.message}}</span></div>
+        {{/if}}
+    </div>
+{{/each}}

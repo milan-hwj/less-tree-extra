@@ -1,0 +1,11 @@
+{{#if (res.member_status === 1 || res.member_status === 2) }}
+<div class="steps">
+    <h2 class="steps-title">拼团步骤<a class="J_rule-link" href="/mp/pintuan/rule.html?iid={{iid}}">规则说明<i
+            class="icon-next"></i></a></h2>
+    <ul class="steps-list">
+        <li><span class="number number1 active"></span>支付开团/参团</li>
+        <li><span class="number number2 active"></span>邀请参团</li>
+        <li><span class="number number3 {{#if (res.member_status === 1) }}active{{/if}}"></span>人满成团</li>
+    </ul>
+</div>
+{{/if}}

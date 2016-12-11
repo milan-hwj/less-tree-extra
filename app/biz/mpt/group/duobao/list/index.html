@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>伙拼榜</title>
+</head>
+
+<body>
+    <input id="app_share_conf" type="hidden" value='{ "platform": "qq_qzone_weixin_timeline_weibo_copy", 
+           "title": "【0元伙拼】加入伙拼战队，与队友齐心协力一起向榜单冲刺！", 
+           "comment": "【伙拼榜】伙拼成功，就会榜上有名，赶紧召集队友一起伙拼吧~ ", 
+           "image": "http://h0.hucdn.com/open/201620/1463732877_65fb6a0901caab59_100x100.png",
+           "url": "http://m.beibei.com/mpt/group/duobao/index.html" }'>
+           
+    <section class="eff-cont">
+        <div class="no-item-tip" id="J_no-item-tip">
+            <div class="back"></div>
+            <p class="tip">还没有英雄上榜哟，快去争取拔得头筹~</p>
+            <a href='/mpt/group/duobao/index.html'>逛逛今日伙拼</a>
+        </div>
+        <ul class="item-list" id="J_item-list"></ul>
+        <div class="spinner" id="J_spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </section>
+    <!--底部导航-->
+    <%- include('../../../../../../unit/common/widget/pintuan/duobao/footer/footer.html', {tabIndex: 1}) %>
+    <!-- loading  -->
+    <%- include('../../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+    
+    <!-- @T template -->
+    <script type="text/template" id="T_item-list">
+        {@each list as item}
+        <li class="item">
+            <div class="rank-mess">
+                <p class="index"><span>第${item.index}期</span></p>
+                <p class="date">开奖时间: ${item.lottery_date}</p>
+            </div>
+            <a href="${item.detailUrl}" class="item-cont J_log" data-iid=${item.iid}>
+                <div class="img-cnt">
+                    <img use-lazyload data-src=${item.jpg} src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png" />
+                </div>
+                <div class="info-cnt">
+                    <p class="pro-title">${item.title}</p>
+                    <p class="pro-stock">夺榜战队【奖品数: ${item.try_stock}份】</p>
+                    <p class="top1"><i class="icon"></i>${item.top_groups_1}</p>
+                    <p class="top2"><i class="icon"></i>${item.top_groups_2}</p>            
+                    <p class="top3"><i class="icon"></i>${item.top_groups_3}</p>    
+                </div>
+            </a>
+            <a href="${item.winnerListUrl}" class="prize J_log" data-block="中奖名单">中奖名单<i class="arrow"></i></a>
+        </li>
+        {@/each}
+    </script>
+
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>

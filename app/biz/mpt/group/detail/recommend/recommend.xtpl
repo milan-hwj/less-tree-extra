@@ -1,0 +1,18 @@
+<div class="recommend-mask fadeIn" id="J_recommend-mask"></div>
+<div class="recommend-inner slideInUp" id="J_recommend-inner">
+    <p class="title" id="J_recommend-title">商品抢光啦，来看看其他好货吧~<i class="icon-arrow-down"></i></p>
+    <div class="scroll-bar">
+        <div class="recommend-list" style="width:{{data.srollWidth}}px;">
+            {{#each (data.recom_items)}}
+            <a class="item J_recommend-item" href="/gaea_pt/mpt/group/detail.html?iid={{this.iid}}" data-iid={{this.iid}}>
+                <div class="item-img-container">
+                    <img class="item-img b-lazy-h b-lazy-ani" data-src="{{this.img}}" alt={{this.title}}
+                         src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png">
+                </div>
+                <p class="item-title">{{this.title}}</p>
+                <p class="item-price">￥<span class="price-int">{{this.priceInt}}</span>{{this.priceDec}}</p>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>

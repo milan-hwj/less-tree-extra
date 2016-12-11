@@ -1,0 +1,11 @@
+<div class="promise-block">
+    <a href="{{target}}">
+        <ul class="promise-list">
+                {{#each(data)}}
+                    {{#each(this)}}
+                        <li><i style="background-image: url({{this.icon}})"></i><span>{{this.text}}</span></li>
+                    {{/each}}
+                {{/each}}
+        </ul>
+    </a>
+</div>

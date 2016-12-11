@@ -1,0 +1,107 @@
+<div class="info-head">
+    <div class="img">
+        <img
+            class="left-part"
+            alt="{{this.title}}"
+            use-lazyload
+            data-src="{{avatar_img}}"
+            src="{{avatar}}"
+        >
+    </div>
+    <span class="name">{{nick}}</span>
+    {{#if (pusher_type === 0)}}
+        <span class="level" id="J_level">如何成为金牌会员？</span>
+    {{else}}
+        <span class="level">{{pusherStr}}</span>
+    {{/if}}
+    <div class="help-tip J_log"
+        data-json__block_name="贝贝赚宝_我要提现页面_规则说明"
+        data-json__tab="我要提现"
+        data-json__biz="zhuanbao"
+    >
+        <img src="//h0.hucdn.com/open/201633/ccd3e8fab9cdaae7_28x28.png">
+        <span>规则说明</span>
+    </div>
+</div>
+<div class="info-income">
+    <span class="title">可提现金额(元)</span>
+    <div class="income-group">
+        <span class="num">{{balanceShow}}</span>
+        {{#if( isZero )}}
+            <a class="btn J_log"
+                href="/mpt/pusher/pusher-products.html"
+                data-json__block_name="贝贝赚宝_我要提现页面_去助力按钮"
+                data-json__tab="我要提现"
+                data-json__biz="zhuanbao"
+            >
+                去开团
+            </a>
+        {{else}}
+            <a class="btn J_log"
+                href="/mpt/pusher/withdrawals/withdrawals.html"
+                data-json__block_name="贝贝赚宝_我要提现页面_提现按钮"
+                data-json__tab="我要提现"
+                data-json__biz="zhuanbao"
+            >
+                提现
+            </a>
+        {{/if}}
+    </div>
+</div>
+<a 
+    href="/mpt/pusher/withdrawals/withdrawals-record.html"
+    class="withdrawals-record record J_log"
+    data-json__block_name="贝贝赚宝_我要提现_提现记录按钮"
+    data-json__tab="我要提现"
+    data-json__biz="zhuanbao"
+>
+    <span class="title">提现记录</span>
+    <i class="icon iconfont"></i>
+</a>
+<a
+    href="/mpt/pusher/withdrawals/record/reward-record.html"
+    class="commission-record record J_log"
+    data-json__block_name="贝贝赚宝_我要提现_累计奖励入口"
+    data-json__tab="我要提现"
+    data-json__biz="zhuanbao"
+>
+    <span class="title">累计金额</span>
+    <i class="icon iconfont"></i>
+    <span class="num">{{allCommission}}元</span>
+</a>
+<a
+    href="/mpt/pusher/withdrawals/record/anticipated-record.html"
+    class="pre-commission-record record J_log"
+    data-json__block_name="贝贝赚宝_我要提现_预计新增奖励入口"
+    data-json__tab="我要提现"
+    data-json__biz="zhuanbao"
+>
+    <span class="title">预计新增金额</span>
+    <i class="icon iconfont"></i>
+    <span class="num">{{preCommission}}元</span>
+</a>
+<a
+    href="javascript:;"
+    class="my-verification-code record J_log"
+    id="J_my-verification-code"
+    data-json__block_name="贝贝赚宝_我要提现_我的二维码入口"
+    data-json__tab="我要提现"
+    data-json__biz="zhuanbao"
+>
+    <span class="title">我的验证码</span>
+    <i class="icon iconfont"></i>
+</a>
+<a
+    href="javascript:;"
+    class="my-friends record J_log"
+    id="J_my-friends"
+    data-json__block_name="贝贝赚宝_我要提现_我的好友入口"
+    data-json__tab="我要提现"
+    data-json__biz="zhuanbao"
+>
+    <span class="title">我的好友</span>
+    <i class="icon iconfont"></i>
+    {{#if (pusher_type === 1 && friends_num)}}
+        <span class="num">{{friends_num}}个</span>
+    {{/if}}
+</a>

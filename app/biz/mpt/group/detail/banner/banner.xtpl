@@ -1,0 +1,22 @@
+<ul class="slider-wrap">
+    {{#each (data,"img","id")}}
+    <li>
+        <a href="javascript:void(0);">
+            {{#if (xindex===0)}}
+            <img alt="b-lazy" data-src="{{img}}"
+                 src="//h0.hucdn.com/open/201639/0a5e0eb2269f22a2_750x750.png"/>
+            {{ else }}
+            <img dataimg="{{img}}" src="//h0.hucdn.com/open/201639/0a5e0eb2269f22a2_750x750.png"
+                 class="lazyimg" alt=""/>
+            {{/if}}
+        </a>
+    </li>
+    {{/each}}
+</ul>
+{{#if (length>5) }}
+    <div class="slider-index-wrap">
+        <span class="slider-index"></span>
+    </div>
+{{else}}
+    <div id='J_slider-status' class="slider-status"></div>
+{{/if}}

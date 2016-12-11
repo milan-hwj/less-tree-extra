@@ -1,0 +1,12 @@
+<ul class="coupons">
+    {{#each (data)}}
+<li class="coupon-item J_coupon-item" data-event_id="{{event_id}}" data-iid="{{iid}}" data-title="{{title}}">
+        <img class="item-img" src="{{img}}">
+        {{#if (is_soldout)}}
+            <img class="item-tips" data-type="soldout" src="//h0.hucdn.com/open/201642/46c2dad872806fc1_160x160.png">
+        {{elseif (is_lock)}}
+            <img class="item-tips"  data-type="lock" src="//h0.hucdn.com/open/201642/6ff8028fbae025fa_160x160.png">
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>

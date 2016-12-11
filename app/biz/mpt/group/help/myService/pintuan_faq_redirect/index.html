@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            var param = decodeURIComponent(window.location.href.split('?')[1]);
+            var strs = param.split('&');
+            var params = {};
+            for(var i = 0, l = strs.length; i < l; i++){
+                var key = strs[i].split('=')[0],
+                    value = strs[i].substr(key.length + 1);
+                params[key] = value;
+            }
+            if(params['iid']) {
+                location.href = encodeURI(window.location.protocol + '//m.beibei.com/help/myService.html?live800=false&type=pintuan&iid=' + params['iid']);
+            } else {
+                location.href = encodeURI(window.location.protocol + '//m.beibei.com/help/myService.html?live800=false&type=pintuan');
+            }
+        </script>
+    </body>
+</html>

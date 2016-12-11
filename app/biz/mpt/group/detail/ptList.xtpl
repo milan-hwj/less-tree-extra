@@ -1,0 +1,23 @@
+{{# if(data.length) }}
+<div class="pt-list">
+    <h3>有小伙伴邀请你参团，快来看看吧~</h3>
+    <ul>
+        {{#each (data)}}
+        <a href="/mpt/group/home.html?group_code={{this.token}}">
+            <li class="pt-item J_go-index">
+                <div class="box">
+                    <img src="//b3.hucdn.com/upload/face/1607/18/18407810631476_1600x1600.jpg!320x320.jpg"
+                          data-src="{{this.jpg}}" class="img b-lazy lazyimg"/>
+                    <div class="info">
+                        <p class="name">{{this.nick}}</p>
+                        <p class="countdown">剩余<span class="J_group_countdown"></span></p>
+                    </div>
+                    <div class="num">还差<span>{{this.needNum}}</span>人成团</div>
+                    <div class="btn"><span>去参团</span><i class="iconfont">&#xe67a;</i></div>
+                </div>
+            </li>
+        </a>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}

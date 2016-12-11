@@ -1,0 +1,44 @@
+<%
+    var data = {};
+    try{
+        data.id = id  
+    }catch(e){
+        data.id = 'preload_data';
+    }
+
+    data.url = url;
+
+    try{
+        data.method  = method 
+    }catch(e){
+        data.method  = 'get';
+    }
+
+    try{
+        data.timeout = timeout || 1000;
+    }catch(e){
+        data.timeout = 1000;
+    }
+
+    try{
+        data.query = JSON.stringify(query);
+    }catch(e){
+        data.query = '{}';
+    }
+
+    try{
+       data.form = JSON.stringify(form);
+    }catch(e){
+       data.form = '{}';
+    }  
+%>
+
+<script service="@gaea/preload" type="text/data" id="<%= data.id %>">
+    {
+        url : '<%= data.url %>',
+        method : '<%= data.method %>',
+        timeout : <%= data.timeout %>,
+        query : <%- data.query %>,
+        form : <%- data.form %>,
+    }
+</script>

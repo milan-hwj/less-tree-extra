@@ -1,0 +1,53 @@
+@import "../../../common/less/_variables";
+
+.toast-layer {
+    position: fixed;
+    z-index: 101;
+    .px2rem(left, 18);
+    .px2rem(top, 40);
+    .px2rem(padding, 2);
+    .px2rem(padding-right, 21);
+    .px2rem(height, 56);
+    .px2rem(line-height, 56);
+    .font-size(24);
+    color: #FFF;
+    opacity: 0;
+    .px2rem(border-radius, 30);
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+
+    .avatar {
+        background: url("//h0.hucdn.com/open/201628/eaaf666489951694_86x86.png") no-repeat center center;
+        .background-size();
+        .px2rem(width, 56);
+        .px2rem(height, 56);
+        float: left;
+        border-radius: 100%;
+    }
+    a {
+        -webkit-touch-callout: none;
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        outline: 0;
+    }
+    a:visited {
+        color: inherit;
+    }
+    span {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .ellipsis {
+        .line1();
+    }
+    &.fadein {
+        opacity: 1;
+    }
+    &.toast-channel, &.toast-home {
+        .px2rem(top, 100);
+    }
+}

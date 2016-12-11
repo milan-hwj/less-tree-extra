@@ -1,0 +1,57 @@
+@import '~unit/common/less/common.less';
+@import '../../common/less/variables.less';
+
+html {
+    background-color: #e2e4e6;
+}
+
+.main {
+    .list {
+        background-color: #fff;
+        li {
+            .px2rem(height, 128);
+            .avatar {
+                float: left;
+                position: relative;
+                .px2rem(height, 80);
+                .px2rem(width, 80);
+                .px2rem(padding, 24);
+                img {
+                    .px2rem(border-radius, 80);
+                    display: block;
+                    .size(100%, 100%);
+                }
+                span {
+                    position: absolute;
+                    background-color: #ffb450;
+                    color: #FFF;
+                    padding: 0 6/@g-base;
+                    .px2rem(right, 24);
+                    .px2rem(bottom, 24);
+                    .px2rem(font-size, 20);
+                    .px2rem(border-radius, 100);
+                }
+            }
+            .detail {
+                .detail-inner {
+                    padding: 24/@g-base 0;
+                    .px2rem(margin-left, 128);
+                    .px2rem(height, 80);
+                    .border-bottom(1px, solid, @gray-line);
+                }
+                .nick {
+                    color: #1a1c20;
+                    .fontSize(28);
+                }
+                .time {
+                    color: #888;
+                    .fontSize(24);
+                    .px2rem(margin-top, 10);
+                }
+            }
+        }
+    }
+    .custom-empty-page {
+        .px2rem(margin-top, 240);
+    }
+}

@@ -1,0 +1,30 @@
+{{# if (data.item_fight_group && data.item_fight_group.activity_type !== 4)}}
+    <div class="intro">
+        <p class="intro-title">
+            <a href="/mp/pintuan/rule.html?iid={{data.iid}}">
+                <span>贝贝拼团玩法</span>
+                <label>规则说明<i class="iconfont">&#xe67a;</i></label>
+            </a>
+        </p>
+        <ul class="steps flex-center">
+            <li class="">
+                <p class="flex-center align-center">
+                    <i>1</i>
+                    <span>支付开团/参团</span>
+                </p>
+            </li>
+            <li class="">
+                <p class="flex-center align-center mid">
+                    <i>2</i>
+                    <span>邀请参团</span>
+                </p>
+            </li>
+            <li class="">
+                <p class="flex-center align-center last">
+                    <i>3</i>
+                    <span>人满成团</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+{{/ if}}

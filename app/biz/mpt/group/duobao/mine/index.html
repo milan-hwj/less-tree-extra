@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>我的伙拼</title>
+</head>
+
+<body>
+    <input type="hidden" id="app_share_conf">
+    <!--头部导航-->
+    <section class="tab-container" id="J_tab-container"></section>
+    <!--商品列表-->
+    <section class="eff-cont">
+        <div class="no-item-tip" id="J_no-item-tip">
+            <div class="back"></div>
+            <p class="tip"></p>
+            <a href='/mpt/group/duobao/index.html' class="J_log" data-block="逛逛今日伙拼">逛逛今日伙拼</a>
+        </div>
+        <div class="group-list-cont" id="J_group-list-cont">
+            <!-- 全部 -->
+            <ul class="J_group-list"></ul>
+            <!-- 进行中 -->
+            <ul class="J_group-list"></ul>
+            <!-- 伙拼成功 -->
+            <ul class="J_group-list"></ul>
+            <!-- 伙拼失败 -->
+            <ul class="J_group-list"></ul>
+        </div>
+        <div class="spinner" id="J_spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </section>
+    <!--底部导航-->
+    <%- include('../../../../../../unit/common/widget/pintuan/duobao/footer/footer.html', {tabIndex: 2}) %>
+
+    <!-- loading  -->
+    <%- include('../../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+
+    <!-- @T template -->
+	<script type="text/template" id="J_list-tpl">
+	    {@each trial_items as item, index}
+	    <li>
+	        <a href="{@if item.biz_status == 0}${item.share_url}{@else}${item.url}{@/if}" class="info">
+	        	<div class="img-cnt">
+                	<img data-src=${item.img} } use-lazyload src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png" alt="${index}"/>
+	        	</div>
+	        	<div class="info-cnt">
+        		    <p class="title">${item.title}</p>
+        		    <p class="join">${item.join_num}人已申请</p>
+        		    <p class="num">奖品数：<em>${item.prize_num}</em></p>
+        		    <p class="time">开奖时间：${item.lottery_date}&nbsp;${item.lottery_time}</p>
+	        	</div>
+	        </a>
+	        <div class="operate">
+	            <div class="left">加入战队：${item.group_corps_desc}</div>
+	            <div class="btn-area">
+	            {@if item.biz_status == 0}
+		            <a class="btn btn-pink J_log" href="${item.share_url}" data-block="喊人伙拼">喊人伙拼</a>
+		            <div class="status status-apply"></div>
+            	{@/if}
+	            {@if item.biz_status == 1}
+	            	<a class="btn J_log" href="${item.winner_list_url}" data-block="中奖名单(成功)">中奖名单</a>
+	            	<a class="btn J_log" href='/orders/order-detail.html?oid=${item.oid}&beibeiapp_info={"target":"bb/trade/order_detail", "oid": "${item.oid}"}' data-block="查看订单">查看订单</a>
+	            	<div class="status status-success"></div>
+            	{@/if}
+	            {@if item.biz_status == 2}
+	            	<a class="btn J_log" href="${item.winner_list_url}" data-block="中奖名单(失败)">中奖名单</a>
+	            	<div class="status status-fail"></div>
+	            {@/if}
+	            </div>
+	        </div>
+	    </li>
+	    {@/each}
+	</script>
+
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>

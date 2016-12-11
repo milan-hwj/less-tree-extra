@@ -1,0 +1,43 @@
+/**
+ * @desc    贝贝推手-底部导航条
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/08/02
+ */
+ @import '../../../../../../../unit/common/less/common.less';
+ @import '../../less/variables.less';
+.custom-dialog{
+    .content{
+        padding: 60/@g-base 40/@g-base 40/@g-base 40/@g-base;
+
+        .title{
+            .fontSize(32);
+            .px2rem(line-height, 32);
+            text-align: center;
+            font-weight: bold;
+        }
+        ul{
+            .fontSize(26);
+            li{
+                .px2rem(margin-top, 36);
+            }
+        }
+    }
+    .btn{
+        .px2rem(height, 88);
+        .px2rem(line-height, 88);
+        .fontSize(32);
+        color: @red;
+        text-align: center;
+        font-weight: bold;
+        border-top: 1px solid #e4e4e4;
+        cursor: pointer;
+    }
+}
+.no-title {
+    .title {
+        display: hidden;
+    }
+    ul li:first-child {
+        margin-top: 0;
+    }
+}

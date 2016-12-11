@@ -1,0 +1,35 @@
+{{#each(data)}}
+    <a class="product J_log"
+        data-iid={{this.iid}}
+        data-json__block_name="贝贝赚宝_开始助力_商品列表"
+        data-json__tab="开始助力"
+        data-json__position="{{index}}"
+        data-json__biz="zhuanbao"
+        data-entity_type="item"
+        data-entity_list="{{this.iid}}"
+    >
+        <img
+            class="left-part"
+            alt="{{this.title}}"
+            use-lazyload
+            data-src="{{this.img}}"
+            src="//b0.hucdn.com/img/h5/spaceball.gif"
+        >
+        <div class="right-part">
+            <span class="describe">{{this.title}}</span>
+            <div class="bottom-part">
+                <div class="all-commission">
+                    <span>+<em>{{this.all_commission}}</em>元</span>
+                </div>
+                <span class="price">
+                    <span class="price-sign">¥</span>
+                    <span class="price-number-int">{{this.priceInt}}</span>
+                    <span class="price-number-dec">{{this.priceDec}}</span>
+                </span>
+                <span class="num">{{this.group_num}}人团</span>
+                <span class="push-btn">立即开团</span>
+                <!--<span class="push-btn">立赚{{this.all_commission}}元</span>-->
+            </div>
+        </div>
+    </a>
+{{/each}}

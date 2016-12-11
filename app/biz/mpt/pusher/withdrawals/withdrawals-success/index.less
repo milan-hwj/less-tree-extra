@@ -1,0 +1,41 @@
+/**
+ * @desc    贝贝推手-提现成功
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/08/05
+ */
+@import '../../../../../../unit/common/less/common.less';
+@import '../../common/less/variables.less';
+
+html{
+    background-color: @gray-background;
+}
+.main{
+    font-family: HeitiJ-Light, "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: @font-base;
+    text-align: center;
+
+    img{
+        .px2rem(width, 200);
+        .px2rem(height, 200);
+        .px2rem(margin-top, 300);
+    }
+    p{
+        .fontSize(32);
+        .px2rem(margin-top, 40);
+    }
+    span{
+        .fontSize(28);
+        .px2rem(width, 430);
+        color: @gray;
+        margin: 40/@g-base auto;
+        display: block;
+    }
+    a{
+        .fontSize(30);
+        .px2rem(border-radius, 8);
+        padding: 21/@g-base 78/@g-base;
+        color: @red;
+        border: 1px solid @red;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,10 @@
+<ul class="discount-block">
+    {{#if (data.order_back_shell_msg) }}
+    <li class="item-list item-icon">
+        <a href="{{data.order_back_shell_rule_url}}">
+            <span class="tag text">返</span>
+            <span class="name">{{data.order_back_shell_msg}}</span>
+        </a>
+    </li>
+    {{/if}}
+</ul>

@@ -1,0 +1,40 @@
+@import '../../common/less/_variables';
+
+.icons {
+    height: 100/@g-base;
+    &:after{
+        top: 40rem/@g-base;
+    }
+}
+
+.promise-block {
+    padding: 5/@g-base 0 5/@g-base 24/@g-base;
+    height: 90/@g-base;
+    background-color: @background-block;
+    .border-top(1px, solid, @color-divider);
+    overflow: hidden;
+}
+
+.promise-list {
+    .clearfix();
+    li {
+        float: left;
+        width: 196/@g-base;
+        height: 45/@g-base;
+        line-height: 45/@g-base;
+        color: @gray-base;
+        .fontSize(24);
+        span {
+            vertical-align: middle;
+        }
+        i {
+            margin-right: 8/@g-base;
+            display: inline-block;
+            width: 28/@g-base;
+            height: 28/@g-base;
+            vertical-align: middle;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}

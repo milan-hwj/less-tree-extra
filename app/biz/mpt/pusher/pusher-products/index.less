@@ -1,0 +1,182 @@
+/**
+ * @desc    贝贝推手-首页
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/08/01
+ */
+@import '../common/less/variables.less';
+@import '../../../../../unit/common/less/common.less';
+@import '../../../../../unit/common/widget/pintuan/pusherFooter/pusherFooter.less';
+@import "~@beibei/navmenu/less/nav-menu.less";
+@import "../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.less";
+@import "../common/less/navmenu.less";
+
+.nav-menu();
+.nav-menu-pusher();
+.mui-loading();
+body{
+    @red: #FF4848;
+    color: #3D3D3D;
+    box-sizing: border-box;
+    background-color: #FFF;
+    .px2rem(padding-bottom, 100);
+
+    .products-header{
+        .px2rem(height, 80);
+        border-bottom: 1px solid @gray-line;
+        background-color: #FFF;
+
+        .products-bar{
+            .px2rem(width, 750);
+            .px2rem(height, 80);
+            .nav-menu-wrapper{
+                .px2rem(width, 600);
+                .px2rem(height, 80);
+                .px2rem(padding-left, 20);
+                float: left;
+            }
+            .gradient-mask{
+                .px2rem(width, 30);
+                .px2rem(height, 80);
+                .px2rem(right, 120);
+                position: absolute;
+                z-index: 34;
+                background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 90%, #ffffff 100%);
+                background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 90%, #ffffff 100%);
+            }
+        }
+    }
+    .products{
+        .product{
+            margin: 8/@g-base;
+            display: inline-block;
+
+            img{
+                .px2rem(width, 240);
+                .px2rem(height, 240);
+            }
+            .right-part{
+                .px2rem(width, 464);
+                .px2rem(padding-top, 8);
+                .px2rem(padding-bottom, 24);
+                .px2rem(margin-left, 20);
+                border-bottom: 1px solid #e4e4e4;
+                vertical-align: top;
+                display: inline-block;
+
+                .padding-right{
+                    .px2rem(padding-right, 16);
+                }
+                .describe{
+                    .fontSize(28);
+                    .px2rem(height, 80);
+                    .px2rem(line-height, 40);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+
+                    .padding-right;
+                }
+                .bottom-part{
+                    .fontSize(24);
+                    .px2rem(margin-top, 30);
+                    .px2rem(line-height, 54);
+                    .padding-right;
+                    
+                    .all-commission{
+                        text-align: right;
+
+                        span{
+                            display: inline-block;
+                            .px2rem(width, 156);
+                            text-align: center;
+                            color: @gray;
+                            .fontSize(24);
+                            em{
+                                font-weight: bold;
+                                color: @red;
+                                padding: 0 2/@g-base;
+                            }
+                        }
+                    }
+                    .price{
+                        color: @red;
+                        .fontSize(32);
+                        font-weight: bold;
+
+                        .price-sign{
+                            .fontSize(26);
+                        }
+                        .price-number-dec{
+                            .fontSize(26);
+                            position: relative;
+                            left: -8/@g-base;
+                        }
+                    }
+                    .num{
+                        color: @gray;
+                    }
+                    .push-btn{
+                        .px2rem(min-width, 156);
+                        .px2rem(height, 54);
+                        float: right;
+                        display: inline-block;
+                        color: #FFF;
+                        background-color: @red;
+                        border-radius: 6/@g-base;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .item-loading{
+        .px2rem(height, 80);
+        .px2rem(line-height, 80);
+        text-align: center;
+        color: #999;
+        .fontSize(24)
+    }
+
+    // TODO 奇怪的代码,待抽象
+    @slider-height: 210/@g-base;
+    .slider(100%,  @slider-height);
+    .slider-status {
+        position: relative;
+        margin-top: -1rem;
+    }
+    
+    .slider {
+        margin: 0 auto;
+        -webkit-transition: height .5s linear;
+                transition: height .5s linear;
+    }
+    
+    .slider,
+    .slider-outer {
+        height: @slider-height !important;
+    }
+    
+    .slider-outer .slider-wrap li img {
+        -webkit-transition: opacity .5s linear;
+                transition: opacity .5s linear;
+    
+        opacity: 0;
+    }
+    .sort{
+        float: right;
+        .px2rem(width, 110);
+        padding-right: 20/@g-base;
+    }
+    .search-container{
+        .px2rem(width, 750);
+        .px2rem(height, 77);
+        background-color: #fff;
+        z-index: 1;
+    }
+}
+.popup-main{
+    text-align: center;
+}

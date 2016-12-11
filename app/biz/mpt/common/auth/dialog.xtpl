@@ -1,0 +1,22 @@
+<div class="ui-dialog show">
+    <div class="ui-dialog-layer">
+        <div class="ui-dialog-cnt">
+            <div class="ui-dialog-bd">
+                <h4 id="J_login_title">为保证帐号安全，请绑定手机号码</h4>
+                <div class="input-container">
+                    <input type="tel" name="phone" placeholder="请输入手机号码" maxlength="11">
+                </div>
+                <div class="code-container">
+                    <div class="input-container">
+                        <input type="number" name="code" placeholder="请输入验证码" maxlength="4">
+                    </div>
+                    <button id="J_login_code">获取验证码</button>
+                </div>
+            </div>
+            <div class="ui-dialog-ft">
+                <button class="J_login_cancel">取消</button>
+                <button class="J_login_submit">确认</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+@import '../../common/less/_variables';
+
+@g-color-bg3: #FFEDF1;
+
+.infos {
+    background-color: @background-block;
+    .pintuan {
+        padding-left: 24rem/@g-base;
+        height: 140rem/@g-base;
+    }
+    .prices {
+        padding-top: 40rem/@g-base;
+        font-size: 0;
+        //.num {
+        //    width: 128rem/@g-base;
+        //    height: 48rem/@g-base;
+        //    display: inline-block;;
+        //    vertical-align: top;
+        //    background-color: @g-color-bg3;
+        //    text-align: center;
+        //    color: @color-main;
+        //    border-radius: 24rem/@g-base;
+        //    .fontSize(26);
+        //    line-height: 48rem/@g-base;
+        //
+        //    strong {
+        //        .fontSize(28);
+        //        .font-weight();
+        //        margin-left: 3rem/@g-base;
+        //        margin-right: 3rem/@g-base;
+        //    }
+        //}
+        span {
+            vertical-align: bottom;
+        }
+        .sale-tag-wrapper{
+            display: inline-block;
+            margin-left: 16/@g-base;
+            -webkit-transform: scale(.6);
+            -moz-transform: scale(.6);
+            transform: scale(.6);
+            -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+        }
+        .sale-tag {
+            display: inline-block;
+            margin: 0 8/@g-base 2/@g-base;
+            padding: 0 10/@g-base;
+            background-color: @color-main;
+            color: #FFF;
+            line-height: 40/@g-base;
+            font-size: 30/@g-base;
+        }
+        .price {
+            display: inline-block;
+            line-height: 1;
+            .fontSize(30);
+            color: @color-main;
+            i {
+                .fontSize(48);
+                line-height: 48rem/@g-base;
+                margin: 0 3rem/@g-base;
+            }
+        }
+        .price-old {
+            margin-left: 12rem/@g-base;
+            display: inline-block;
+            line-height: 1;
+            .fontSize(26);
+            text-decoration: line-through;
+            color: @color-grey;
+        }
+    }
+
+    .group {
+        margin-top: 23rem/@g-base;
+        color: @color-grey;
+        .fontSize(24);
+        line-height: 24rem/@g-base;
+        .num {
+            float: right;
+            margin-right: 24rem/@g-base;
+            span {
+                color: @color-main;
+            }
+        }
+    }
+
+    .product {
+        padding-bottom: 24/@base;
+        .border-bottom(1px, solid, @color-divider);
+        .product-tag {
+            display: inline-block;
+            padding: 0 6/@g-base;
+            .border-with-radius(1px, solid, rgba(255, 73, 100, 0.6), 2px);
+            background-color: rgba(255, 73, 100, 0.1);
+            border-radius: 3px;
+            font-size: 24/@g-base;
+            line-height: 32/@g-base;
+            color: @color-main;
+            &.tag-wait {
+                color: @color-green;
+                background-color: rgba(50, 188, 110, 0.06);
+                .border-with-radius(1px, solid, rgba(50, 188, 110, 0.5), 2px);
+            }
+        }
+        h3 {
+            span {
+                vertical-align: middle;
+            }
+            padding-top: 26rem/@g-base;
+            padding-right: 24rem/@g-base;
+            padding-left: 24rem/@g-base;
+            .fontSize(30);
+            color: @gray-base;
+        }
+
+        .product-detail {
+            margin-top: 16rem/@g-base;
+            .fontSize(24);
+            line-height: 36rem/@g-base;
+            color: @gray-lighter;
+            padding-right: 24rem/@g-base;
+            padding-left: 24rem/@g-base;
+        }
+    }
+
+    .lottery-rule-cont {
+        padding: 24/@base;
+        background-color: rgba(255, 73, 100, 0.04);
+        .border-bottom(1px, solid, @color-divider);
+        .rule-header {
+            line-height: 40rem/@g-base;
+            padding-bottom: 24/@base;
+        }
+        .r-title {
+            .fontSize(26);
+            color: @color-main;
+        }
+        .r-list {
+            float: right;
+            color: @gray-base;
+        }
+        p {
+            .fontSize(24);
+            line-height: 36rem/@g-base;
+            color: @gray-lighter;
+        }
+    }
+}

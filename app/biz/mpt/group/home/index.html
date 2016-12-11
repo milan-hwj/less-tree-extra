@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('../../../../../unit/layout/header.html') %>
+    <title>贝贝拼团</title>
+    <script>
+        (function(){
+            // 跨页面性能打点
+            if (!sessionStorage.getItem('timestamp')) {
+                // 首次进入页面，记录时间、跳转次数
+                sessionStorage.setItem('timestamp', new Date().getTime());
+                sessionStorage.setItem('times', 0);
+            } else {
+                // 授权、关注后跳转回本页面，跳转次数+1
+                sessionStorage.setItem(
+                    'times',
+                    parseInt(sessionStorage.getItem('times')) + 1
+                );
+            }
+            // 记录页面从第一次载入到跳转多次后回到本页面时的时差
+            window.redirectTime = {
+                type: sessionStorage.getItem('times'),
+                time: new Date().getTime() - sessionStorage.getItem('timestamp'),
+                clear: function() {
+                    sessionStorage.removeItem('timestamp');
+                    sessionStorage.removeItem('time');
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+	<section>
+		<div id="J_container-details" class="m-detail-cont"></div>
+
+		<div id="J_container-btns"></div>
+
+		<div id="J_container-ads" class="m-ads-cont"></div>
+	</section>
+	<section id="J_nav_menu">
+	</section>
+	<section id="J_container-mores">
+	</section>
+	<section>
+		<div id="J_container-steps" class="m-step-cont"></div>
+
+		<div class="m-enter">
+			<a class="J_log" href="/gaea_pt/mpt/group/channel.html" data-block="more_group_beibei">贝贝拼团</a>
+			|
+			<a class="J_log" href="/mpt/group/i.html" data-block="check_order">我的拼团</a>
+		</div>
+		<div id="J_container-masks"></div>
+
+		<div id="J_sku-mask"></div>
+	</section>
+	<div id="J_popup-mask" class="mask hidden">
+		<div class="popup-prop">
+			<p class="content"></p> 
+			<div class="popup-btns">
+				<a href="javascript:;" class="J_btn-cancel">取消</a>
+				<a href="javascript:;" class="J_btn-confirm">我去开团</a>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- loading -->
+	<%- include('../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+
+	<script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+</html>

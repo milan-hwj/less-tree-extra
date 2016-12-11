@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>免费试用</title>
+</head>
+
+<body>
+    <!-- 内容容器 -->
+    <section class="page-container J_page hidden">
+        <!-- 导航 -->
+        <section class="addr-container">
+            <div class="addr-head">
+                <span>请确认你的收货地址</span>
+                <a href="javascript:;" class="J_set-address">设置</a>
+            </div>
+            <div class="addr-body">
+                <div class="J_addr-info addr-info">
+                </div>
+                <div class="no-addr J_no-addr hidden">
+                    <p>亲，暂无你的收货地址！
+                        <br/>东东将无法寄到你的手中，请点击“设置”哦！
+                    </p>
+                </div>
+                <div class="form-item">
+                    <input type="checkbox" id="agree" class="check J_check" checked/>
+                    <label class="label" for="agree">同意&nbsp;<a href="/app/0ysy/agreement.html">试用条款</a></label>
+                </div>
+            </div>
+            <div class="addr-foot">系统只提取默认地址，请在申请前设置完成！</div>
+        </section>
+        <!-- footer -->
+        <section class="foot-bar">
+            <a class=" btn-apply unable J_btn-apply">提交申请</a>
+        </section>
+    </section>
+    
+    <%- include('../../../../../../demo/mpt/group/unit/bindDialog.html') %>
+    <%- include('../../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+
+    <!-- 地址模板 -->
+    <script type="text/template" id="T_addr-info">
+        <p class="user"><em>${name}</em>${mobile}</p>
+        <p class="addr">${province}${city}${area}${address}</p>
+    </script>
+
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+
+</html>

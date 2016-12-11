@@ -1,0 +1,9 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+    	<a class="swiper-slide swiper-lazy itemAds" data-background="//h0.hucdn.com/open/201641/4fecebc296b3188c_550x420.png" href="javascript:;" alt="抽奖规则" data-title="每日抽奖头部广告-抽奖规则"></a>
+        {{#each (data)}}
+    	<a class="swiper-slide swiper-lazy itemAds J_log" data-block="每日抽奖头部轮播广告" data-position="{{xindex}}" data-background="{{this.img}}" href="{{this.linkUrl}}" alt="{{this.name}}" data-title="每日抽奖头部广告-{{this.name}}"></a>
+        {{/each}}
+    </div>
+    <div class="swiper-pagination" id="J_swiper-pagination"></div>
+</div>

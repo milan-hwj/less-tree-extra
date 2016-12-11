@@ -1,0 +1,96 @@
+@import '../../common/less/_variables';
+@import "../../../../../../unit/common/less/common.less";
+
+.lives {
+    margin: 18rem/@base 0;
+    padding: 24rem/@g-base;
+    background: @background-block;
+    .live-info {
+        margin-bottom: 30rem/@g-base;
+        .fontSize(0);
+    }
+    .live-img {
+        display: inline-block;
+        vertical-align: top;
+        margin: 32rem/@g-base 18rem/@g-base 0 0;
+        width: 88/@g-base;
+        height: 44/@g-base;
+    }
+    .info {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 22rem/@g-base;
+    }
+    .name {
+        .fontSize(30);
+        line-height: 30rem/@g-base;
+        color: @gray-base;
+    }
+    .sale {
+        .fontSize(26);
+        line-height: 26rem/@g-base;
+        color: @color-grey;
+        margin-top: 12rem/@g-base;
+        .num {
+            color: @color-main;
+        }
+    }
+    .enter {
+        float: right;
+        margin-top: 40rem/@g-base;
+        .fontSize(24);
+        line-height: 24rem/@g-base;
+        color: @gray-base;
+    }
+    .live-intro {
+        .fontSize(0);
+        display: flex;
+    }
+    .intro-item {
+        flex: 1;
+        color: @color-grey;
+        .fontSize(24);
+        vertical-align: middle;
+        line-height: 24rem/@g-base;
+        text-align: center;
+        .item {
+            height: 40rem/@g-base;
+            line-height: 40rem/@g-base;
+        }
+        .tag {
+            display: inline-block;
+            width: 40rem/@g-base;
+            height: 40rem/@g-base;
+            line-height: 40rem/@g-base;
+            font-size: 30rem/@g-base;
+            -webkit-transform: scale(.6);
+            -moz-transform: scale(.6);
+            transform: scale(.6);
+            text-align: center;
+        }
+    }
+    .high {
+        color: @color-main;
+        &.tag {
+            background-color: rgba(255, 73, 100, 0.10);
+            .border-with-radius(1px, solid, @color-main, 3px);
+        }
+    }
+    .mid {
+        color: @color-grey;
+        &.tag {
+            background: rgba(142, 142, 142, 0.10);
+            .border-with-radius(1px, solid, @color-grey, 3px);
+        }
+    }
+    .low {
+        color: @color-green;
+        &.tag {
+            background: rgba(59, 190, 127, 0.10);
+            .border-with-radius(1px, solid, @color-green, 3px);
+        }
+    }
+    .intro-item:last-child {
+        margin-right: 0;
+    }
+}

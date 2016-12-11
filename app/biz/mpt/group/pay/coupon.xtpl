@@ -1,0 +1,11 @@
+{{#if (res)}}
+    <div class="coupon">
+        <div class="icon-coupon"></div>
+        <div class="info">
+            <p>48小时内登录贝贝APP即可领取</p>
+
+            <p>60元大礼包</p>
+        </div>
+        <div class="btn-receive" id="J_btn-receive">立即领取</div>
+    </div>
+{{/if}}

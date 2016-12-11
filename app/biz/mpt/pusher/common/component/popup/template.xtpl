@@ -1,0 +1,14 @@
+
+<div class="{{style}}{{#if (noTitle)}} no-title{{/if}} custom-dialog">
+    <div class="content">
+        <p class="title">{{title}}</p>
+        <ul>
+        {{#each(contents)}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+    </div>
+    {{# if (closeable) }}
+        <div class="btn">知道了</div>
+    {{/if}}
+</div>

@@ -1,0 +1,39 @@
+@import '../../less/_variables';
+@color-grey: #E4E4E4;
+@height: 60;
+
+.ui-amount {
+    float: right;
+    .px2rem(line-height, @height);
+    .px2rem(height, @height);
+    .border(1px, solid, @color-grey);
+    .font-size(30);
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    .box-sizing();
+    .amount {
+        display: inline-block;
+        .px2rem(height, @height);
+        .px2rem(width, 80);
+        .font-size(26);
+        text-align: center;
+        .box-sizing();
+        &::-webkit-inner-spin-button {
+            display: none
+        }
+    }
+    .minus, .plus {
+        display: inline-block;
+        .px2rem(height, @height);
+        .px2rem(width, 80);
+        background-color: white;
+        .box-sizing();
+    }
+    .minus {
+        .border-right(1px, solid, @color-grey);
+    }
+    .plus {
+        .border-left(1px, solid, @color-grey);
+    }
+}

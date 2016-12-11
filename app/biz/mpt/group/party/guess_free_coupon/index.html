@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../../../../../../unit/layout/header.html') %>
+    <title>猜价送免单</title>
+</head>
+<body>
+    <header id="J_header" class="header" >
+        <p id="J_last-channce" class="coupon-chance"></p>
+        <a class="J_get-coupon get-coupon-btn" href='/coupon/coupon.html?beibeiapp_info={"target":"coupon"}'></a>
+    </header>
+    <section id="J_container" class="container"></section>
+
+    <%- include('../../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+    <input id="app_share_conf" type="hidden" value='{"title":"【贝贝拼团11.11】猜价送免单，千元商品免费团","desc":"0元商品抢先看，喜欢的话就赶紧去参加活动吧，只要猜对价格就能获得免单的机会，快来一起猜猜猜~  ","comment":"0元商品抢先看，喜欢的话就赶紧去参加活动吧，只要猜对价格就能获得免单的机会，快来一起猜猜猜~  ","image":"https://h0.hucdn.com/open/201642/d07b549a425a1518_100x100.jpg","url":"http://m.beibei.com/mpt/group/party/guess_free_coupon.html","platform":"weixin","callback":"shareCallBack()"}'>
+    <script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+</html>

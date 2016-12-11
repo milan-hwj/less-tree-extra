@@ -1,0 +1,68 @@
+{{#each(data.pusher_groups)}}
+    <li>
+        <a href='{{this.url}}'
+            class="info J_log"
+            data-json__block_name="贝贝赚宝_助力进度_列表"
+            data-json__tab="助力进度"
+            data-json__biz="zhuanbao"
+            data-entity_type="item"
+            data-entity_list="{{this.iid}}"
+        >
+            <div class="img-cnt">
+                <img data-src="{{this.img}}" use-lazyload src="//b0.hucdn.com/img/h5/spaceball.gif"/>
+            </div>
+            <div class="info-cnt">
+                <p class="title">{{this.title}}</p>
+                <p class="value"><span class="price">&yen;<em>{{this.priceInt}}</em>{{this.priceDec}}</span>&nbsp;{{this.group_num}}人团</p>
+                {{# if (this.group_status === 1)}}
+                    <div class="status status-success">
+                        拼团成功
+                    </div>
+                {{ elseif (this.group_status === 2)}}
+                    <div class="status status-apply">
+                        等待成团
+                    </div>
+                {{ elseif (this.group_status === 3)}}
+                    <div class="status status-fail">
+                        拼团失败
+                    </div>
+                {{/if}}
+            </div>
+        </a>
+        <div class="operate">
+            <div class="left">
+                {{# if (this.group_status === 2 && this.member_num_left) }}
+                还差<em>{{this.member_num_left}}</em>人成团
+                {{elseif (this.group_status === 1)}}
+                {{this.lottery_date}}&nbsp;{{this.lottery_time}}&nbsp;成团
+                {{/if}}
+            </div>
+            <div class="btn-area">
+                    {{# if (this.group_status === 2)}}
+                    <a class="btn btn-pink"
+                        href='{{this.joinUrl}}'
+                        data-iid="{{this.iid}}"
+                        data-json__block_name="贝贝赚宝_成团进度_按钮_点击"
+                        data-json__tab="成团进度"
+                        data-json__button="喊人参团"
+                        data-json__biz="zhuanbao"
+                    >
+                        喊人参团
+                    </a>
+                    {{ else }}
+                        {{# if (this.can_apply) }}
+                            <a class="btn btn-pink J_open J_log"
+                                data-iid="{{this.iid}}"
+                                data-json__block_name="贝贝赚宝_助力进度_按钮_点击"
+                                data-json__tab="助力进度"
+                                data-json__button="再次助力"
+                                data-json__biz="zhuanbao"
+                            >
+                                再开一单
+                            </a>
+                        {{/if}}
+                    {{/if}}
+            </div>
+        </div>
+    </li>
+{{/each}}

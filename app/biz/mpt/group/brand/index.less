@@ -1,0 +1,155 @@
+@import '~src/less/mp/pintuan/unit/pt-common';
+html {
+    background-color: @g-color-grey8;
+}
+
+section {
+    position: relative;
+    //标题区域
+    .title-line {
+        position: absolute;
+        border-bottom-style: solid;
+        border-bottom-color: #2f293f;
+        .px2rem(top, 53);
+        .px2rem(left, 265);
+        .px2rem(width, 12);
+        .px2px(border-bottom-width, 4);
+        &.line2 {
+            left: auto;
+            .px2rem(right, 265);
+        }
+    }
+    .header-title {
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        .px2rem(top, 23);
+        .translate(-50%, 0);
+        .size(184rem/@base, 56rem/@base);
+    }
+}
+
+.new-arrival {
+    overflow: hidden;
+    background: url('//h0.hucdn.com/open/201644/20543b7383d0a859_750x510.png') no-repeat center;
+    background-size: 100% auto;
+    .px2rem(height, 510);
+    .px2rem(width, 750);
+    .header-title {
+        background: url('//h0.hucdn.com/open/201644/e4923ff06be55ffe_184x56.png') no-repeat center;
+        background-size: 100% auto;
+    }
+    .scroll-bar {
+        position: absolute;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+                overflow-scrolling: touch;
+        .px2rem(top, 105);
+        .px2rem(left, 0);
+        .px2rem(height, 404);
+        .px2rem(width, 750);
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .new-arrival-list {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        .px2rem(padding-bottom, 24);
+        .px2rem(padding-left, 24);
+        .px2rem(height, 404);
+        a {
+            float: left;
+            overflow: hidden;
+            display: inline-block;
+            .px2rem(margin-right, 24);
+            .clearfix();
+            &.main {
+                background-color: #fff;
+                .px2rem(height, 383);
+                .px2rem(width, 500);
+                img {
+                    display: block;
+                    -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                    .px2rem(padding, 6);
+                    .size(100%, auto);
+                }
+            }
+            &.item {
+                position: relative;
+                text-align: center;
+                background-color: @g-color-white;
+                .px2rem(height, 380);
+                .px2rem(width, 270);
+                img {
+                    display: block;
+                    -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                    .px2rem(padding, 6);
+                    .px2rem(height, 270);
+                    .px2rem(width, 270);
+                }
+                .price {
+                    position: absolute;
+                    color: #3D3358;
+                    width: 100%;
+                    font-family: PingFang-SC-Medium;
+                    .fontSize(26);
+                    .px2rem(bottom, 58);
+                    .px2rem(line-height, 28);
+                }
+                .popularity {
+                    position: absolute;
+                    color: @g-color-grey3;
+                    width: 100%;
+                    opacity: .8;
+                    .fontSize(24);
+                    .px2rem(bottom, 24);
+                    .px2rem(line-height, 24);
+                    i {
+                        display: inline-block;
+                        position: relative;
+                        top: 1px;
+                        .px2rem(height, 24);
+                        .px2rem(width, 20);
+                        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAUVBMVEX///+qrbH39/j9/f26vL+ytbmvsratsLTr7O3x8vPh4uTb3N7v7/DHycu9wMO3ur35+fne3+HX2NrS1NbMztDo6erQ0tTCxMe0t7vm5+jKzM4amJ63AAAAt0lEQVQoz22R2wKDIAxDKYggCHjbdPv/D51QqMrIU80hKg27tFnBmlohDE2wACjdAg4Aet4AEk59/30DSVPt8x7Bq/KnDlC2Ol98MHq++cMBRVaCIX/s4S41lPPZJzn0RX6/XIjgAiw+dPxDYEsAAwdnnEBIQFHa0eevHfl0G5mBTMDH8f34b58LOrU8NmlwTYoSTKRIlzue48xQIbZFDVtV1i3OSY6MNHoIIof3Z7t6W2NgdzobP/KIBQplE1b6AAAAAElFTkSuQmCC");
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.flash-sale {
+    .size(100%, 104rem/@base);
+    .header-title {
+		background: url('//h0.hucdn.com/open/201644/0c289a2268b25b39_184x56.png') no-repeat center;
+		background-size: 100% auto;
+    }
+    .flash-sale-cont {
+        .px2rem(padding-top, 104);
+    }
+}
+
+.group-title {
+    color: #2f293f;
+}
+.rmb,
+.price-int,
+.price-dec {
+    color: #2f293f;
+    font-family: PingFang-SC-Medium;
+}
+
+.status-opend .group-banner .group-btn {
+    background-color: #3D3358;
+    color: #fff;
+}
+
+.buying-info .users{
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+}

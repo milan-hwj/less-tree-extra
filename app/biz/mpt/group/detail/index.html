@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ../../../../../unit/layout/header.html %>
+    <title>贝贝-拼团详情</title>
+    <script>
+        (function(){
+            // 跨页面性能打点
+            if (!sessionStorage.getItem('timestamp')) {
+                // 首次进入页面，记录时间、跳转次数
+                sessionStorage.setItem('timestamp', new Date().getTime());
+                sessionStorage.setItem('times', 0);
+            } else {
+                // 授权、关注后跳转回本页面，跳转次数+1
+                sessionStorage.setItem(
+                        'times',
+                        parseInt(sessionStorage.getItem('times')) + 1
+                );
+            }
+            // 记录页面从第一次载入到跳转多次后回到本页面时的时差
+            window.redirectTime = {
+                type: sessionStorage.getItem('times'),
+                time: new Date().getTime() - sessionStorage.getItem('timestamp'),
+                clear: function() {
+                    sessionStorage.removeItem('timestamp');
+                    sessionStorage.removeItem('time');
+                }
+            }
+        })();
+    </script>
+</head>
+<body data-beacon= '{"entity_type":"pintuan_item","entity_list_key":"iid"}'>
+
+<section class="wrapper J_wrapper">
+    <!--slider-->
+    <div id="J_banner">
+        <div class="slider">
+            <div class="slider-outer" id="J_slider">
+            </div>
+            <div class="goto-detail" id="J_goto-detail"></div>
+        </div>
+    </div>
+
+    <div id="J_infos" class="infos"></div>
+
+    <div id="J_promotion"></div>
+
+    <div id="J_discount"></div>
+
+    <div id="J_icons" class="icons item-list"></div>
+
+    <div id="J_skus" class="skus item-list">
+        <span class="J_skuText">请选择 颜色分类 尺码</span>
+    </div>
+
+    <div id="J_ptList" class="group-block"></div>
+
+    <div id="J_intro"></div>
+
+    <div id="J_reviews"></div>
+
+    <div id="J_lives" class="lives"></div>
+
+    <div id="J_recommend_slide" class="recommend-slide"></div>
+
+    <div class="recommend-tip hidden" id="J_recommend-tip">商品抢光啦，来看看其他好货吧~<i class="icon-arrow-up"></i></div>
+
+    <section class="J_tabContainer m-tab-container"></section>
+    <section class="eff-cont">
+        <section class="tab-item-cont J_tabItemCont z-first-state">
+            <!-- 商品详情 -->
+            <div id="J_details" class="details J_tab_item"></div>
+            <div id="J_rules" class="rules hidden J_tab_item">
+                <%- include ../../../../../unit/common/widget/pintuan/ruleMain/ruleMain.html %>
+                <div class="contact"><a id="J_contactLink" href="javascript:;">点击咨询</a>购买前如有问题，请向贝贝客服咨询</div>
+            </div>
+        </section>
+    </section>
+    <!-- recommend -->
+    <div id="J_recommend" class="recommend"></div>
+    <!-- /recommend -->
+
+    <!--sku masks -->
+    <div id="J_sku-masks"></div>
+    <!-- /masks -->
+
+    <!-- download mask -->
+    <div id="J_download-mask" class="mask hidden">
+        <div class="download-prop">
+            <h2>下载贝贝APP，轻松开团。</h2>
+            <h2>已有贝贝APP点此可直接打开哦！</h2>
+            <p class="download" id="J_btn-download">
+                下载贝贝APP</p>
+            <p id="J_btn-cancel">下次再说</p>
+        </div>
+    </div>
+    <!-- /download mask -->
+
+    <!-- loading -->
+    <%- include ../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html %>
+
+    <section id="J_nav_menu">
+    </section>
+    <section id="J_container-mores">
+    </section>
+    <!--btns-->
+    <section id="J_btns" class="btns"></section>
+    <!--/btns-->
+</section>
+<%- include('../../../common/gaea/preload.html',{
+    id: 'getItemDetail',
+    url: 'http://sapi.beibei.com/item/detail/{{uri.iid}}.html?biz=pintuan'
+})%>
+<%- include('../../../common/gaea/preload.html',{
+    id: 'getReviews',
+    url: 'http://sapi.beibei.com/item/rate/0-{{uri.iid}}-1-10.html'
+})%>
+<script type="text/javascript" src="/assets/libs/zepto.min.js"></script>
+</body>
+</html>

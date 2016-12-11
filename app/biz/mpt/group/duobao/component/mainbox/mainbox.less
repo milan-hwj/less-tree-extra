@@ -1,0 +1,121 @@
+@import "../../../common/less/pt_common.less";
+@main-content-height: 266rem/@g-base;
+
+@icon-clock-red: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAUVBMVEUAAAD/TGr/SmX/WXT/TGb/SWb/SWb/SWb/SWb/SmX/SmX/SWj/Smj/Tmn/TGj/Smb/Smb/SWb/SWX/Smb/SWX/SmX/TGf/S2n/SWX/SWX/SWUSwfq/AAAAGnRSTlMAENoKQMu78/CMeWVgJxuvgObt5NTCLz33rvwf2S0AAADTSURBVCjPbZJZEoMgEESbVRE3jDFJ3/+gkchSRt8PFD01Sw8AhDOLRkEvxgnsvAK5bihsKxlegAiMAaKfZNPIqY93xyDg6ADVtUy0ncLv0VBgNKT1g1KDt6QZIWiwrBgflLrUlnyMWBfoTRk+BQriSaO2GNhRHu/WHopk9ztbpjxkysY2Rva0OAuw7AFM9P+C5wRAcvgXBkoADVUR5nmO9RSbk/DmTihCTaXnHZ1T1eIVz09qN1PbzQNm6oDZkkK1BHcmInJn+8F1UYnLaiunz3DwBSA+DvqJtKGeAAAAAElFTkSuQmCC';
+.main-content {
+    padding: @px8;
+    margin-bottom: @px16;
+    overflow: hidden;
+    background: @color-white;
+
+    .pro-img {
+        float: left;
+    }
+    .pro-img,
+    .pro-img img {
+        display: block;
+        width: 250rem/@g-base;
+        height: 250rem/@g-base;
+    }
+
+    .pro-infos {
+        position: relative;
+        height: 240rem/@g-base;
+        margin-right: @px16;
+        margin-left: 270rem/@g-base;
+        .fontSize(24);
+        .infos-name {
+            min-height: 62rem/@g-base;
+            margin-bottom: 32rem/@g-base;
+            .line2();
+            .fontSize(26);
+            font-weight: normal;
+            color: @gray-base;
+            span {
+                .fontSize(22);
+                padding: 0 5rem/@g-base;
+                margin-right: .1rem;
+                border-radius: 3rem/@g-base;
+                vertical-align: middle;
+                border: 1px rgba(255, 73, 101, .5) solid;
+                text-align: center;
+                color: #ff4965;
+                background: #FFEDF1;
+            }
+        }
+        .infos-txt {
+            color: @color-grey;
+            span {
+                color: @gray-base;
+            }
+        }
+
+        .f-row {
+            position: absolute;
+            left: 0;
+            bottom: 92rem/@base;
+        }
+
+        .s-row {
+            position: absolute;
+            left: 0;
+            bottom: 48rem/@base;
+        }
+
+        .info-bottom {
+            position: absolute;
+            bottom: 4rem/@base;
+            left: 0;
+            color: @color-grey;
+
+        }
+        .info-warn {
+            color: @color-main;
+        }
+    }
+}
+
+.clock-red {
+    display: inline-block;
+    background: url(@icon-clock-red) no-repeat;
+    background-size: 100%;
+    .px2px(height, 24);
+    .px2px(width, 24);
+    vertical-align: middle;
+}
+
+.icon-state {
+    bottom: 12rem/@g-base;
+    right: 0;
+    position: absolute;
+    width: 130rem/@g-base;
+    height: 130rem/@g-base;
+    //夺宝中
+    &.wait {
+        right: -24rem/@g-base;
+        background: url("//h0.hucdn.com/open/201637/07f04946a4f1b855_154x140.png") no-repeat center center;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+        width: 154rem/@g-base;
+        height: 140rem/@g-base;
+    }
+    //夺宝失败
+    &.failed {
+        background: url("//h0.hucdn.com/open/201637/1d709c251f84e813_130x130.png") no-repeat center center;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    //夺宝成功
+    &.win {
+        background: url("//h0.hucdn.com/open/201626/5f9d8f0fafdc4f8b_130x130.png") no-repeat center center;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    // 已开奖
+    &.lotteryed {
+        background: url("//h0.hucdn.com/open/201626/5f9d8f0fafdc4f8b_130x130.png") no-repeat center center;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+}
+

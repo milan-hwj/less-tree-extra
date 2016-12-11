@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('../../../../../unit/layout/header.html') %>
+    <title>贝贝拼团</title>
+</head>
+<body>
+	<!-- 今日热团top area -->
+	<section class="nav-menu-container" id="J_nav-menu"></section>	
+	<!-- 类目页广告icon -->
+	<%- include('../../../../../unit/common/widget/pintuan/adIcons/adIcons.html') %>
+   
+    <%- include('../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html') %>
+	<section class="wrapper top J_wrapper">
+		<!-- 首屏轮播及入口 -->
+		<section id="J_slider-icons">
+		    <div class="slider-list" id="J_slider-list"></div>
+		    <div class="hotspot-ads" id="J_hotspot-ads"></div>
+			<div class="entry-icons J_entryIcons">
+				<a href="/gaea_pt/mpt/group/shot.html" class="J_first-screen-icon">
+					<i class="icon-shot"></i>
+				    <p>1元抢购</p>
+				</a>
+				<a href="/mpt/group/party/seckill.html" class="J_first-screen-icon">
+				    <i class="icon-seckill"></i>
+				    <p>限时秒杀</p>
+				</a>
+				<a href="/mpt/group/daily_lottery.html" class="J_first-screen-icon">
+					<i class="icon-1fsy"></i>
+				    <p>每日抽奖</p>
+				</a>
+                <a href="/gaea_pt/mpt/group/0ysy/index.html" class="J_first-screen-icon">
+                    <i class="icon-0ysy"></i>
+                    <p>免费试用</p>
+                </a>
+                <a href="/gaea_pt/mpt/group/party/9k9.html" class="J_first-screen-icon">
+                    <i class="icon-9k9"></i>
+                    <p>9块9包邮</p>
+                </a>
+			</div>
+		</section>
+		<!-- 每日热团 -->
+		<%- include('../../../../../unit/common/widget/pintuan/everydayHotGroup/edhg.html') %>
+		<!-- 每日热团 -->
+		<%- include('../../../../../unit/common/widget/pintuan/adRowTpl/adRowTpl.html') %>
+		<!-- 拼团商品容器 -->
+		<ul id="J_top-insert-ad"></ul>
+		<div class="category-title hidden">今日必拼·早晚9点上新</div>
+		<ul id="J_container-list" class="container-list"></ul>
+	</section>
+
+	<!-- 底部tab -->
+    <%- include('../../../../../unit/common/widget/pintuan/bottomBar/bottomBar.html', {tabindex:0}) %>
+
+    <!-- @T 轮播 -->
+    <script id="T_slider-list" type="text/template">
+        <div id="J_slider-outer" class="slider-outer">
+            <ul id="J_slider-wrap" class="slider-wrap">
+                {@each list as item, index}
+                <li>
+                    <a href="${item.linkUrl}" data-style="display:block;">
+                        {@if index == 0}
+                        <img src="${item.img}" alt="${item.name}" style="opacity:1;" />
+                        {@else}
+                        <img dataimg="${item.img}" alt="${item.name}" class="lazyimg"
+                             src="//h0.hucdn.com/open/201639/4a71ffdf7964882f_750x350.png" style="opacity:1;" />
+                        {@/if}
+                    </a>
+                </li>
+                {@/each}
+            </ul>
+        </div>
+        <div id='J_slider-status' class="slider-status"></div>
+    </script>
+	<!-- @T nav -->
+	<script id="T_nav-menu" type="text/template">
+		<div class="nav-menu-wrapper">
+		    <div class="nav-menu-inner">
+		        <div class="nav-menu-item active" data-tab=${tab} data-cat="all">上新</div>
+				{@each list as item, index}
+				<div class="nav-menu-item" data-tab=${tab} data-cat=${item.key}>${item.name}</div>
+				{@/each}
+		        <span class="nav-menu-scroll"></span>
+		    </div>
+		</div>
+	</script>
+
+    <!-- gaea preload start -->
+    <%- include('../../../common/gaea/preload.html',{
+        id: 'getAdsFromGaea',
+        url: 'http://sapi.beibei.com/resource/ads-android-0--212_186_343_344-4.2.0-.html'
+    })%>
+    <%- include('../../../common/gaea/preload.html',{
+        id: 'getCategoryFromGaea',
+        url: 'http://sapi.beibei.com/martgoods/category/fightgroup.html'
+    })%>
+    <!-- gaea preload end -->
+
+	<script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+</html>

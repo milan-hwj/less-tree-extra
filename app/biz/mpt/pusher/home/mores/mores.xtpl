@@ -1,0 +1,10 @@
+{{#each (data)}}
+	<a class="item" href="{{this.link}}">
+		<img class="pro-img" use-lazyload data-src="{{this.img}}" src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png" />
+		<p class="pro-name">{{this.title}}</p>
+		<p class="pro-info">
+			<span class="price-sign">¥</span><span class="price-number-int">{{this.priceInt}}</span><span class="price-number-dec">{{this.priceDec}}</span>
+			<span class="price-origin">¥{{this.originPrice}}</span>
+		</p>
+	</a>	
+{{/each}}

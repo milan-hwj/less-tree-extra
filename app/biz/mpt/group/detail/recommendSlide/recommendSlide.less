@@ -1,0 +1,82 @@
+@import '../../common/less/_variables';
+@import "../../../../../../unit/common/less/common.less";
+
+.recommend-slide {
+    margin: 18rem/@g-base 0;
+}
+.recommend-slide-inner {
+    position: relative;
+    background-color: #fff;
+    .title {
+        line-height: 88rem/@g-base;
+        position: relative;
+        height: 88rem/@g-base;
+        padding-left: 30rem/@g-base;
+    }
+    .slider {
+        height: 400rem/@g-base;
+    }
+    .index{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        .px2px(width, 200);
+        .px2px(margin-left, -100);
+        text-align: center;
+        li {
+            display: inline-block;
+            .mpb(margin, 0, 5);
+            .px2px(width, 16);
+            .px2px(height, 16);
+            border-radius: 100%;
+            background-color: @background-main;
+            &.active {
+                background-color: @color-main;
+            }
+        }
+    }
+    .recommend-list-container {
+        height: 400rem/@g-base;
+        .recommend-list {
+            .clearfix();
+            li {
+                padding:0 6rem/@g-base;
+                width: auto;
+            }
+            .item {
+                display: inline-block;
+                float: left;
+                overflow: hidden;
+                padding:0 6rem/@g-base;
+                width: 234rem/@g-base;
+                height: auto;
+                .item-info{
+                    padding: 10rem/@g-base 20rem/@g-base 0 20rem/@g-base;
+                }
+                .item-img {
+                    display: block;
+                    .size(240rem/@g-base);
+                }
+                .item-title {
+                    .px2px(height, 60);
+                    .px2px(line-height, 30);
+                    color: #333;
+                    .fontSize(24);
+                    .line2();
+                }
+                .item-price {
+                    margin-top: 6rem/@g-base;
+                    color: @color-main;
+                    .fontSize(24);
+                    .price-int{
+                        .fontSize(30);
+                    }
+                    .ori-price{
+                        text-decoration: line-through;
+                        color: @gray-lighter;
+                    }
+                }
+            }
+        }
+    }
+}

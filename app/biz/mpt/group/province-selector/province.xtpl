@@ -1,0 +1,10 @@
+<ul>
+	{{#each (data, "value", "key")}}
+	<li class="unit">
+		<div class="f-letter">{{key}}</div>
+		{{#each (value) }}
+			<div class="province J_province" data-pid={{this.c}}>{{this.n}}</div>
+		{{/each}}
+	</li>
+	{{/each}}
+</ul>

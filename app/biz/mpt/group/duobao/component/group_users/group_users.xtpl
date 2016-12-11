@@ -1,0 +1,35 @@
+<div class="groups">
+    <div>
+        <div class="group-info clear">
+            {{#each (res.group_users)}}
+                {{#if (is_leader)}}
+                <div class="col-left">
+                    {{#if (res.join_group_nick)}}
+                    <div class="info">{{nick}}战队，<span>{{res.group_users_count}}</span>人加入<br>您已加入{{res.join_group_nick}}</div>
+                    {{else}}
+                    <div class="info">你还未加入战队</div>
+                    {{/if}}
+                </div>
+                {{/if}} 
+            {{/each}}
+            <div class="col-right J_go-toplist"><a class="go-toplist" href="javascript:;">查看<br>战况 <i class="icon-arrow-red vertical"></i></a></div>
+        </div>
+        <!-- 展开后的列表 -->
+        <ul class="dropdown-box" id="J_dropdown-box">
+            {{include ("./sub.xtpl") }}
+        </ul>
+    </div>
+    {{#if (res.rule_title)}}
+    <div class="divider"></div>
+    <div class="rule-intr">
+        <div class="rule-title">
+            {{res.rule_title}}
+        </div>
+        <div class="rule-detail">
+            {{#each (res.rule_intr)}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+</div>

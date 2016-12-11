@@ -1,0 +1,40 @@
+<%
+var _rid = '';
+try{
+_rid = rid ;
+}catch(e){
+_rid = '' ;
+}
+%>
+
+    <!-- 更多好团 -->
+    <div id="J_container-mores" class="mores">
+        <script type="text/template" id="J_mores-tpl">
+            <div class="mores">
+                <h2 class="mores-title" id="J_mores-title">
+                <span class="division"></span>大家都在团<span class="division"></span>
+            </h2>
+                <ul class="mores-list" data-rid="<%=_rid%>" data-recom_id="${data.recom_id}" data-f_item_id="${data.f_item_id}">
+                    {@each data.fightgroup_items as item, index}
+                    <li class="mores-item J_mores-item J_log" data-iid=${item.iid} data-block="mores_item" data-postion=${index} data-entityid=${item.iid}>
+                        <a href="${item.link}">
+                            <img class="pro-img" use-lazyload data-src="${item.jpg}" src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png" />
+                            <p class="pro-name">${item.title}</p>
+                            <p class="pro-info">
+                                <span class="price-sign">¥</span>
+                                <span class="price-number-int">${item.priceInt}</span><span class="price-number-dec">${item.priceDec}</span>
+                                <span class="join-number">
+                                {@if item.group_in_num >= 10000}
+                                ${(item.group_in_num/10000). toFixed(1)}万人参团
+                                {@else}
+                                ${item.group_in_num}人参团
+                                {@/if}
+                            </span> {@/if}
+                            </p>
+                        </a>
+                    </li>
+                    {@/each}
+                </ul>
+            </div>
+        </script>
+    </div>

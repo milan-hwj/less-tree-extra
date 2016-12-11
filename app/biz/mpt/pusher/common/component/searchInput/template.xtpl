@@ -1,0 +1,7 @@
+<div class="search-component">
+    <form>
+        <input placeholder="快速查找你需要的商品" type="search"/> 
+    </form>
+   <span class="clear-btn"></span>
+   <span class="cancel-btn">取消</span>
+</div>

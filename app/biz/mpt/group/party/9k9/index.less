@@ -1,0 +1,338 @@
+@import "~unit/common/less/common.less";
+@import "~src/less/mp/pintuan/unit/tabs.less";
+@import "~unit/common/widget/pintuan/muiLoading/muiLoading.less";
+.mui-loading();
+
+@b: 46.875;
+@pink: #ff4965;
+@green: #32BC6F;
+
+
+body {
+    background: #f2f4f6;
+}
+.m-tab-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    -webkit-box-shadow: 1px 2px #eee;
+            box-shadow: 1px 2px #eee;
+}
+.eff-cont {
+    width: 750rem/@b;
+    overflow: hidden;
+}
+
+.group-list-cont {
+    margin-top: 80rem/@b;
+    width: 2250rem/@b;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -moz-transition: transform .3s, -moz-transform .3s;
+    -o-transition: transform .3s, -o-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s, -moz-transform .3s, -o-transform .3s;
+    ul {
+        width: 750rem/@b;
+        overflow: hidden;
+        min-height: 1rem;
+        float: left;
+    }
+    li {
+        background: #fff;
+    }
+    .z-end {
+        margin: 0;
+        background: #f2f2f2;
+        color: #8f8f8f;
+        text-align: center;
+        .fontSize(24);
+    }
+}
+
+
+[data-active="0"] {
+    -webkit-transform: translateX(0);
+       -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+         -o-transform: translateX(0);
+            transform: translateX(0);
+}
+[data-active="1"] {
+    -webkit-transform: translateX(-750rem/@b);
+       -moz-transform: translateX(-750rem/@b);
+        -ms-transform: translateX(-750rem/@b);
+         -o-transform: translateX(-750rem/@b);
+            transform: translateX(-750rem/@b);   
+}
+[data-active="2"] {
+    -webkit-transform: translateX(-1500rem/@b);
+       -moz-transform: translateX(-1500rem/@b);
+        -ms-transform: translateX(-1500rem/@b);
+         -o-transform: translateX(-1500rem/@b);
+            transform: translateX(-1500rem/@b);   
+}
+[data-active="3"] {
+    -webkit-transform: translateX(-2250rem/@b);
+       -moz-transform: translateX(-2250rem/@b);
+        -ms-transform: translateX(-2250rem/@b);
+         -o-transform: translateX(-2250rem/@b);
+            transform: translateX(-2250rem/@b);   
+}
+
+.no-item-tip {
+    display: none;
+    width: 750rem/@b;
+    padding: 360rem/@b 0;
+    background: #f2f4f6;
+    text-align: center;
+    .back {
+        background: no-repeat url("//h0.hucdn.com/open/201622/6d0157370a0cbfdb_184x203.png");
+        -o-background-size: 100% 100%;
+           background-size: 100% 100%;
+        width: 184rem/@b;
+        height: 203rem/@b;
+        margin: 0 auto;
+        margin-bottom: 70rem/@b;
+    }
+    p {
+        color: #8f8f8f;
+        .fontSize(24);
+        line-height: 1.5;
+    }
+    a {
+        display: inline-block;
+        margin-top: 60rem/@b;
+        width: 276rem/@b;
+        height: 72rem/@b;
+        line-height: 72rem/@b;
+        .fontSize(26);
+        color:@pink;
+        border: 2px solid @pink;
+        .px2px(border-width, 2);
+        .px2px(border-radius, 6);
+    }
+
+}
+
+.spinner {
+    margin: 15rem/@b auto 20rem/@b;
+    text-align: center;
+    div {
+        width: 20rem/@b;
+        height: 20rem/@b;
+        background-color: @pink;
+        -webkit-border-radius: 100%;
+                border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: bouncedelay 1.36s infinite ease-in-out;
+        -moz-animation: bouncedelay 1.36s infinite ease-in-out;
+          -o-animation: bouncedelay 1.36s infinite ease-in-out;
+             animation: bouncedelay 1.36s infinite ease-in-out;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+          -o-animation-fill-mode: both;
+             animation-fill-mode: both;
+    }
+    .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        -moz-animation-delay: -0.32s;
+          -o-animation-delay: -0.32s;
+             animation-delay: -0.32s;
+    }
+    .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        -moz-animation-delay: -0.16s;
+          -o-animation-delay: -0.16s;
+             animation-delay: -0.16s;
+    }
+}
+ 
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+ 
+@-moz-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -moz-transform: scale(0.0);
+             transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 
+    40% {
+        -moz-transform: scale(1.0);
+             transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+ 
+@-o-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -o-transform: scale(0.0);
+           transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 
+    40% {
+        -o-transform: scale(1.0);
+           transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+ 
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        -moz-transform: scale(0.0);
+          -o-transform: scale(0.0);
+             transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 
+    40% {
+        -moz-transform: scale(1.0);
+          -o-transform: scale(1.0);
+             transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+
+@color-grey1: #3d3d3d;
+@color-grey2: #8f8f8f;
+@color-grey3: #e4e4e4;
+@color-grey4: #f2f2f2;
+@color-grey5: #eee;
+@color-red: #ff4965;
+@color-blue: #35aafc;
+@color-green: #2ccc8c;
+
+@g-color-text0: #000000; //超黑
+@g-color-text1: #3d3d3d; //正常
+@g-color-text2: #8f8f8f; //稍浅
+@g-color-text3: #8f8f8f; //浅色
+@g-color-text4: #ffffff; //白色
+@g-color-text5: #FF4965; //红色
+
+@g-color-border1: #999999; //较深
+@g-color-border2: #E4E4E4; //很浅
+@g-color-border3: #FF8094; //红色
+
+@g-color-bg1: #FFFFFF;   //白色
+@g-color-bg2: #f2F4f6;   //灰色
+@g-color-bg3: #FFEDF1;   //淡红
+@g-color-bg4: #FF4965;   //红色
+@g-color-bg5: #FF97A7;   //单独购买按钮用
+
+.mores {
+    background-color: @g-color-bg2;
+    overflow: hidden;
+    .mores-title {
+        height: 90rem/@g-base;
+        .fontSize(32);
+        line-height: 90rem/@g-base;
+        color: @g-color-text1;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .division {
+        position: relative;
+        top: -10rem/@g-base;
+        height: 1px;
+        width: 120rem/@g-base;
+        display: inline-block;
+        background-color: @g-color-border2;
+    }
+    .division:first-child {
+        margin-right: 8rem/@g-base;
+    }
+    .division:last-child {
+        margin-left: 8rem/@g-base;
+    }
+
+    .mores-list {
+        overflow: hidden;
+    }
+
+    .mores-item {
+        float: left;
+        width: 8rem;
+        background-color: @g-color-bg1;
+        box-sizing: border-box;
+        .border-bottom(1px, solid, #D8D8D8);
+        a {
+            display: block;
+        }
+    }
+
+    .pro-img {
+        width: 8rem;
+        height: 8rem;
+        
+    }
+    .pro-name {
+        padding: 18rem/@g-base 18rem/@g-base 0 18rem/@g-base;
+        margin-bottom: 18rem/@g-base;
+        height: 62rem/@g-base;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
+        .fontSize(24);
+        line-height: 32rem/@g-base;
+        color: @g-color-text1;
+    }
+    .pro-info {
+        position: relative;
+        padding: 0 18rem/@g-base 36rem/@g-base;
+        color: @g-color-text5;
+       
+        .join-number {
+            float: right;
+            .fontSize(24);
+            line-height: 40rem/@g-base;
+            color: @g-color-text3;
+        }
+        
+        .price-text {
+            .fontSize(24);
+            line-height: 24rem/@g-base;  
+        }
+        .price-sign {
+            .fontSize(24);
+            font-weight: bold;
+            line-height: 24rem/@g-base;  
+        }
+
+        .price-number-int {
+            .fontSize(32);
+            font-weight: bold;
+            line-height: 32rem/@g-base;
+        }
+
+        .price-number-dec {
+            .fontSize(24);
+            font-weight: bold;
+            line-height: 24rem/@g-base;
+        }
+
+        .price-origin {
+            margin-left: 12rem/@g-base;
+            .fontSize(24);
+            line-height: 24rem/@g-base;
+            color: @g-color-text3;
+            text-decoration: line-through;
+        }
+    }
+
+    .mores-item:nth-child(2n) {
+        .border-left(1px, solid, #d8d8d8);
+    }
+}
+

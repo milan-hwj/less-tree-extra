@@ -1,0 +1,25 @@
+<div class="steps">
+    <h2 class="steps-title">贝贝拼团玩法
+        <a class="J_rule-link rule_link J_log" data-block="group_rule" {{#if (data.iid) }} href="/mp/pintuan/rule.html?iid={{data.iid}}" {{/if}}>
+        <span>规则说明</span><span class="iconfont">&#xe67a;</span></a></h2>
+    <ul class="steps-list flex-center">
+        <li class="{{#if (data.activeStep >= 1) }}active{{/if}}">
+            <p class="flex-center align-center">
+                <label>1</label>
+                <span>支付开团/参团</span>
+            </p>
+        </li>
+        <li class="{{#if (data.activeStep >= 2) }}active{{/if}}">
+            <p class="flex-center align-center mid">
+                <label>2</label>
+                <span>邀请参团</span>
+            </p>
+        </li>
+        <li class="{{#if (data.activeStep >= 3) }}active{{/if}}">
+            <p class="flex-center align-center last">
+                <label>3</label>
+                <span>人满成团</span>
+            </p>
+        </li>
+    </ul>
+</div>

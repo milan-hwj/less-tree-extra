@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="product-header">
+        <span class="money">{{data.numTitle}}¥{{data.cms_detail.all_cms}}</span>
+        <span class="status">{{data.status}}</span>
+    </div>
+    <div class="product-content">
+        <img src="{{data.cms_detail.img}}">
+        <div class="right-part">
+            <p>{{data.cms_detail.title}}</p>
+            <span>{{data.cms_detail.timeShow}} 成团</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<ul class="prop-list">
+    {{#each (data[0])}}
+    <li class="prop-item">
+        <span class="key">{{this.prop_name}}</span>
+        <span class="value">{{this.prop_value}}</span>
+    </li>
+    {{/each}}
+</ul>
+{{{data[1]}}}

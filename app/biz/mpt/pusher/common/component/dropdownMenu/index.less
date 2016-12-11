@@ -1,0 +1,76 @@
+/**
+ * @desc    贝贝推手-下拉菜单
+ * @author  wenjun.he@husor.com.cn
+ * @date    16/09/01
+ */
+@import '../../../../../../../unit/common/less/common.less';
+@import "../../../../../../../unit/common/less/itemlistBox.less";
+@import "../../less/variables.less";
+.sort {
+    color: @font-base;
+    position: relative;
+    height: 80/@g-base;
+    line-height: 80/@g-base;
+    text-align: center;
+    .box-sizing();
+    .font-size(28);
+    .ico-arrow-down {
+        position: absolute;
+        top: 50%;
+        margin-left: 6/@g-base;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: solid #d4d6d8 8/@g-base;
+        border-right: 7/@g-base solid transparent;
+        border-bottom: 0;
+        border-left: 7/@g-base solid transparent;
+        -webkit-transition: all .5s linear;
+        transition: all .5s linear;
+    }
+}
+.sort-open {
+    .ico-arrow-down {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+}
+.sort-detail {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+    .box-sizing();
+    .item {
+        width: 100%;
+        .box-sizing();
+        position: relative;
+        padding-left: 24/@g-base;
+        height: 88/@g-base;
+        line-height: 88/@g-base;
+        border-bottom: 1px solid #e4e4e4;
+        .font-size(26);
+        &:first-child {
+            border-top: 1px solid #e4e4e4;
+        }
+        .ico-tick {
+            display: none;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            .size(24/@g-base, 24/@g-base);
+            background: url("//h0.hucdn.com/open/201635/6d9e51759b54e03d_24x24.png");
+            background-repeat: no-repeat;
+            right: 25/@g-base;
+            .background-size(cover);
+        }
+    }
+    .current {
+        color: @red;
+        .ico-tick {
+            display: block;
+        }
+    }
+}

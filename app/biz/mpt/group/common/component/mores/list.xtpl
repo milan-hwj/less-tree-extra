@@ -1,0 +1,29 @@
+{{#each (data.fightgroup_items) }}
+<li class="mores-item-container J_mores-item" data-iid={{this.iid}} data-block="mores_item" data-postion={{xindex}}
+    data-entityid={{this.iid}}>
+    <a href='/gaea_pt/mpt/group/detail.html?iid={{this.iid}}&beibeiapp_info={"target":"detail","iid":{{this.iid}}}'>
+        <div class="mores-item">
+            <div class="item-container">
+                <img class="pro-img b-lazy b-lazy-ani" data-src="{{this.img}}"
+                     src="//h0.hucdn.com/open/201639/ed37893cc0d2680e_375x375.png"/>
+            </div>
+            <p class="pro-name">{{this.title}}</p>
+            <p class="pro-info">
+                <!-- <span class="price-text">拼团价：</span> -->
+                <span class="price-sign">¥</span>
+                <span class="price-number-int">{{this.priceInt}}</span><span class="price-number-dec">{{this.priceDec}}</span>
+                <span class="price-origin">¥{{this.originPrice}}</span>
+                {{#if (this.group_in_num || this.join_num)}}
+                            <span class="join-number">
+                                {{#if (this.group_in_num >= 10000)}}
+                                    {{ this.formatNum }}万人参团
+                                {{else}}
+                                    {{ this.group_in_num || this.join_num }}人参团
+                                {{/if}}
+                            </span>
+                {{/if}}
+            </p>
+        </div>
+    </a>
+</li>
+{{/each}}

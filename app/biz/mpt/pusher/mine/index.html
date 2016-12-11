@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('/unit/layout/header.html' )%>
+    <title>成团进度</title>
+</head>
+<body>
+<!-- loading -->
+         <%- include ../../../../../unit/common/widget/pintuan/muiLoading/muiLoading.html %>
+<section class="tab-container" id="J_tab-container"></section>
+<section class="eff-cont">
+    <div class="no-item-tip" id="J_no-item-tip">
+        <div class="back"></div>
+        <p class="tip">暂无拼团订单，<br>拼团可得更多优惠哦~</p>
+        <a 
+            href='/mpt/pusher/pusher-products.html'
+            class="J_log"
+            data-json__block_name="贝贝赚宝_助力进度_去助力按钮"
+            data-json__tab="助力进度"
+            data-json__biz="zhuanbao"
+        >
+            去开团
+        </a>
+    </div>
+    <div class="group-list-cont" id="J_group-list-cont">
+        <!-- 全部 -->
+        <ul class="J_group-list"></ul>
+        <!-- 申请中 -->
+        <ul class="J_group-list"></ul>
+        <!-- 申请成功 -->
+        <ul class="J_group-list"></ul>
+        <!-- 申请失败 -->
+        <ul class="J_group-list"></ul>
+    </div>
+    <div class="spinner" id="J_spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</section>
+
+<%- include('/unit/common/widget/pintuan/pusherFooter/pusherFooter.html', {active:'progress'})%>
+
+
+<script type="text/javascript" src="/mpt_static/libs/zepto.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div class="empty-page {{style}}">
+    <img src="{{img}}">
+    <ul class="content">
+        {{#each(contents)}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <a class="btn" href="{{href}}">{{btnTitle}}</a>
+</div>
