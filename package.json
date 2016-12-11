@@ -1,16 +1,23 @@
 {
-  "name": "@beibei/webpack-part-release",
-  "version": "0.0.7",
+  "name": "webpack-part-release",
+  "version": "1.0.1",
   "description": "webpack-part-release",
   "main": "index.js",
-  "scripts": {
+  "scripts": {},
+  "author": {
+    "name": "milan-hwj"
   },
-  "author": "milan-hwj",
   "license": "MIT",
   "keywords": [],
   "dependencies": {
     "less-tree-extra": "^0.2.0",
     "lodash": "4.14.1",
     "madge": "1.3.0"
-  }
+  },
+  "readme": "# webpack-part-release\n\n用于贝贝M站webpack架构下的打包任务, 通过分析代码(html, xtpl, js, less)间的依赖关系，打包受到改动影响的代码，减少webpack打包工作量，从而提高打包速度。  \n\n## 用法\n```javascript\n// 1 安装\nnpm install webpack-part-release --save\n\n// 2 gulpfile.js\nvar partRelease = require('webpack-part-release');\nvar webpackProdConf = require('./bin/build/webpack.prod.conf.js');\npartRelease('part-release', {\n    webpackConfig: webpackConfig // webpack配置文件\n}); // 最简方式, 注册了名为part-release的gulp任务\n\ngulp.task('default', ['part-release', 'xxx', 'xxx']);\n\n// 3 运行\ngulp\n```\n\n## 配置信息\n```javascript\npartRelease('part-release', {\n    source: './app/biz/', // 依赖分析路径，默认为./app/biz/\n    rev: './rev/', // 存储md5信息目录，会在该目录下生成rev-manifast.json, 默认路径./bin/partRelease\n    webpackConfig: webpackProdConf, // webpack配置信息[必需]\n    callback: function(diffFiles, stats) { // 打包结束回调\n        // diffFiles: 内容发生变化的source文件\n        // stats: webpack 打包日志\n    }\n});\n```\n\n## 异常容灾\n若发现依赖打包出现异常、改动代码并未打包，请再打包一次(会走全量打包), 并将svn版本号邮件给wenjun.hwj@husor.com，让我们能更好地定位问题，谢谢支持!\n\n## 性能预测\n以拼团页面负责度为例，使用基于依赖分析的打包方案，  \n性能(单位秒):  12 + n * 5 (n: 页面数量)  \n  \n如  \n本次发布修改了一个页面，打包预计时间 17s  \n修改了一个组件，影响了4个页面，预计时间 32s  \n\n",
+  "readmeFilename": "README.md",
+  "gitHead": "79949dfd072311d0b7c4347bbef6ac63949c6d0d",
+  "_id": "@beibei/webpack-part-release@0.0.7",
+  "_shasum": "d74257e128d1c27262d2bf72cf42fbf14cc74d39",
+  "_from": "@beibei/webpack-part-release@latest"
 }

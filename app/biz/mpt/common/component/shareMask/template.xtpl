@@ -1,8 +1,0 @@
-<div class="share-mask">
-    <div class="share-prop animated flash">
-        <p class="tip">{{tip}}</p>
-    </div>
-    <div class="share-content">
-        {{{content}}}
-    </div>
-</div>

@@ -1,4 +1,0 @@
-
-{{#each(data)}}
-    <p class="notice-item">{{this}}</p>
-{{/each}}

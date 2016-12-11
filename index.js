@@ -10,6 +10,7 @@ var _ = require('lodash');
 var madge = require('madge');
 var lessTree = require('less-tree-extra');
 var webpack = require("webpack");
+var logUtil = require('./log/main');
 
 var srcPath;
 var revName = 'rev-manifest.json';
@@ -208,6 +209,15 @@ gulp.task('part-webpack-release', function () {
     } else {
         gutil.log('全量打包');
     }
+    var startTime = new Date().getTime();
+    logUtil.createLogFile(
+        opt.logOpt,
+        diffFiles, // 变化的源码文件
+        {}, // 本次打包生成的文件
+        webpackProdConf.entry,
+        (new Date().getTime() - startTime)/1000
+    );
+    return;
     // 打包
     return webpack(webpackProdConf, function (err, stats) {
         if (err) {
@@ -215,7 +225,18 @@ gulp.task('part-webpack-release', function () {
         }
         gutil.log(stats.toString({colors: true, chunks: false, children: false}));
         // 回调
-        opt.callback && opt.callback(diffFiles, stats);
+        // opt.callback && opt.callback(diffFiles, stats);
+        // 生成日志文件
+        var startTime = new Date().getTime();
+        logUtil.createLogFile(
+            diffFiles, // 变化的源码文件
+            stats.toJson({
+                chunks: false,
+                children: false
+            }).assets, // 本次打包生成的文件
+            webpackProdConf.entry,
+            (new Date().getTime() - startTime)/1000
+        );
     });
 });
 
