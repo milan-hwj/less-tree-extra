@@ -1,7 +1,6 @@
 /*eslint-disable */
 'use strict';
 var _ = require('lodash');
-var entries = require('../../../../bin/build/get_entry');
 var fileHandle = require('../fileHandle');
 
 // 获取html的title

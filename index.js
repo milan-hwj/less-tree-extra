@@ -17,6 +17,7 @@ var revName = 'rev-manifest.json';
 var revDir;
 var webpackProdConf;
 var opt;
+var startTime = new Date().getTime();
 
 var init = function(option) {
     opt = option;
@@ -209,34 +210,25 @@ gulp.task('part-webpack-release', function () {
     } else {
         gutil.log('全量打包');
     }
-    var startTime = new Date().getTime();
-    logUtil.createLogFile(
-        opt.logOpt,
-        diffFiles, // 变化的源码文件
-        {}, // 本次打包生成的文件
-        webpackProdConf.entry,
-        (new Date().getTime() - startTime)/1000
-    );
-    return;
     // 打包
     return webpack(webpackProdConf, function (err, stats) {
         if (err) {
             throw new gutil.PluginError('webpack', err);
         }
         gutil.log(stats.toString({colors: true, chunks: false, children: false}));
-        // 回调
-        // opt.callback && opt.callback(diffFiles, stats);
         // 生成日志文件
-        var startTime = new Date().getTime();
-        logUtil.createLogFile(
-            diffFiles, // 变化的源码文件
-            stats.toJson({
-                chunks: false,
-                children: false
-            }).assets, // 本次打包生成的文件
-            webpackProdConf.entry,
-            (new Date().getTime() - startTime)/1000
-        );
+        if(opt.logOpt){
+            logUtil.createLogFile(
+                opt.logOpt,
+                diffFiles, // 变化的源码文件
+                stats.toJson({
+                    chunks: false,
+                    children: false
+                }).assets, // 本次打包生成的文件
+                webpackProdConf.entry,
+                (new Date().getTime() - startTime)/1000
+            );
+        }
     });
 });
 
